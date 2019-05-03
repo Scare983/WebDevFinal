@@ -253,15 +253,9 @@ class getSQLProcessor {
     });
   }
   getAllEmployeeInfoExceptRoles(callback) {
-    this.conn.getConnection(function(err, conn) {
-      if (err) {
-        callback(err, null);
-        return;
-      }
-      var showEmployees = `SELECT employee_init.id, fName, lName, employeeType, email, gender, userName, password, prefWeekends, prefNumOfShifts FROM employee_init JOIN employee ON employee.id = employee_init.id`;
-      conn.query(showEmployees, function (err, results) {
-        callback(err, results, conn);
-      });
+    var showEmployees = `SELECT employee_init.id, fName, lName, employeeType, email, gender, userName, password, prefWeekends, prefNumOfShifts FROM employee_init JOIN employee ON employee.id = employee_init.id`;
+    this.conn.query(showEmployees, function (err, results) {
+      callback(err, results);
     });
   }
 }

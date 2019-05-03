@@ -18,12 +18,12 @@ getProcessor.getEmployeesWithShiftTypes(date,"12:00", "16:00", "C", function(err
 });*/
 /*app.post('/',function(req, res, next){
     res.json({msg: 'This is CORS-enabled for all origins!'});
-
     console.log("body: ", req.body.shopAMbools[0]);
 
     createSchedule(req.body);
   next();
 });*/
+
 app.get('/', function(req, res, next) {
  /*getProcessor.getAllEmployeeInfo(function (err, results) {
     var newRes = JSON.stringify(results); //makes object into JSON string
@@ -33,14 +33,13 @@ app.get('/', function(req, res, next) {
   }); */
   getProcessor.getAllEmployeeInfoExceptRoles(function(err, results) {
     if (err) {
-      // TODO: send res error.
-      console.error(err);
+      next(err);
       return;
     }
 
     getProcessor.getAllRoles(function(err, rolesList) {
       if (err) {
-        console.error(err);
+        next(err);
         return;
       }
       console.log('rolesList' + rolesList);
@@ -57,7 +56,7 @@ app.get('/', function(req, res, next) {
           prefNumOfShifts: 2,
           roleTrained: [ 'S', 'R', 'RR', 'C' ] 
         ]
-      */
+        */
       let joined = [];
       for (let i = 0; i < results.length; i++) {
         let joinedItem = {
@@ -104,11 +103,16 @@ app.get('/', function(req, res, next) {
 
       }
     }, conn);
-
-
   }); */
-
 //});
+
+
+app.use(function(err, req, res, next) {
+  console.error(err);
+  res.status(500).send({
+    message: 'something we wrong'
+  });
+});
 
 app.listen(3000);
 
