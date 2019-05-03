@@ -88,9 +88,9 @@ output;
    arrayOfValues;
   constructor(private http: HttpClient) { }
   ngOnInit() {
-
     this.http.get(this.serverURL, httpOptions)
       .subscribe(msg => this.arrayOfValues.push(msg));
+
    //console.log(this.arrayOfValues);
   }
 
