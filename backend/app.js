@@ -9,11 +9,12 @@ var getProcessor = new getSQLProcessor();
 var queryInsert = new insertProcessor();
 app.use( cors() );
 app.use( bodyParser.json() );
+/* EXAMPLE
 var date = new Date("Mon Jan 15 2019");
-getProcessor.getEmployeesWIthShiftTypes(date,"12:00", "16:00", "C", function(err, res) {
+getProcessor.getEmployeesWithShiftTypes(date,"12:00", "16:00", "C", function(err, res) {
   console.log(res);
 
-});
+});*/
 app.post('/',function(req, res, next){
     res.json({msg: 'This is CORS-enabled for all origins!'});
 
