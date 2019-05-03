@@ -4,7 +4,7 @@
 
   <div class="col-10">
 
-    Start date for new schedule: <input [(ngModel)]="dateStrings[0]" type="date" class="form-control"
+    Start date for new schedule: <input [(ngModel)]="this.vals.dateStrings[0]" type="date" class="form-control"
                                   name="schedule-start-date" size="12" (change)="string2Date();">
 
   </div>
@@ -20,13 +20,13 @@
 
   <div class="col-8">
 
-<div *ngIf="dateStrings[0]">
+<div *ngIf="this.vals.dateStrings[0]">
 
     <form (ngSubmit)="onSubmit()" #scheduleForm="ngForm">
 
       <table class="setScheduleTable">
         <tr>
-          <td>{{dateStrings[0]}}</td>
+          <td>{{this.vals.dateStrings[0]}}</td>
           <td>
             <table class="setScheduleOptionsTable">
               <tr>
@@ -86,7 +86,7 @@
         </tr>
 
         <tr>
-          <td>{{dateStrings[1]}}</td>
+          <td>{{this.vals.dateStrings[1]}}</td>
           <td>
             <table class="setScheduleOptionsTable">
               <tr>
@@ -145,7 +145,7 @@
         </tr>
 
         <tr>
-          <td>{{dateStrings[2]}}</td>
+          <td>{{this.vals.dateStrings[2]}}</td>
           <td>
             <table class="setScheduleOptionsTable">
               <tr>
@@ -204,7 +204,7 @@
         </tr>
 
         <tr>
-          <td>{{dateStrings[3]}}</td>
+          <td>{{this.vals.dateStrings[3]}}</td>
           <td>
             <table class="setScheduleOptionsTable">
               <tr>
@@ -263,7 +263,7 @@
         </tr>
 
         <tr>
-          <td>{{dateStrings[4]}}</td>
+          <td>{{this.vals.dateStrings[4]}}</td>
           <td>
             <table class="setScheduleOptionsTable">
               <tr>
@@ -322,7 +322,7 @@
         </tr>
 
         <tr>
-          <td>{{dateStrings[5]}}</td>
+          <td>{{this.vals.dateStrings[5]}}</td>
           <td>
             <table class="setScheduleOptionsTable">
               <tr>
@@ -381,7 +381,7 @@
         </tr>
 
         <tr>
-          <td>{{dateStrings[6]}}</td>
+          <td>{{this.vals.dateStrings[6]}}</td>
           <td>
             <table class="setScheduleOptionsTable">
               <tr>

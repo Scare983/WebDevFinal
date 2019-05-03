@@ -1,4 +1,8 @@
 export class ScheduleFormValues{
+
+  dateStrings: string [] = [];
+  dateDates: Date[] = [];
+
   shopAMbools: boolean[] = [true, true, true, true, true, true, true];
   shopPMbools: boolean[] = [true, true, true, true, true, true, true];
   cartsAMbools: boolean[] = [true, true, true, true, true, true, true];

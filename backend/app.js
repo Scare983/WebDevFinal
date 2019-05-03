@@ -22,7 +22,7 @@ app.post('/',function(req, res, next){
 app.listen(3000);
 
 function createSchedule(body){
-  console.log("schedule(body): ", body.shopAMbools[0]);
+  console.log("schedule(body): ", body);
 
   var i = 2;
   while(i != 7){
@@ -34,7 +34,7 @@ function createSchedule(body){
       //Would also like a function that returns fname and lname when id is input.
     if(body.shopAMbools[i]){
       getProcessor.getListOfEmployeeAvailableDaysAndTimes('evan', 'verma', function(err, results){
-        console.log("results: ", results);
+      	console.log("sql query success");
       });
     }
     if(body.shopPMbools[i]){
