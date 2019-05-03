@@ -4,8 +4,8 @@ class getSQLProcessor {
     this.conn = mysql.createPool({
         host: "localhost",
         user: "root",
-        password: "root",
-        database: "dawgs@thetee",
+        password: "Darshan2!",
+        database: "dawgs_the_tee",
         connectionLimit : 1000
       }
     );
@@ -205,7 +205,7 @@ class getSQLProcessor {
    * endTimeSlotOfShift
    * shiftType ENUM from ST, C, R, RR, T, TC, S
    */
-  getEmployeesWIthShiftTypes(date,startOfSlotOfShift, endTimeSlotOfShift, shiftType, callback ) {
+  getEmployeesWithShiftTypes(date,startOfSlotOfShift, endTimeSlotOfShift, shiftType, callback ) {
     this.conn.getConnection(function(err, conn) {
       if(err) throw err;
       var day = date.getDay();

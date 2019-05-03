@@ -22,10 +22,6 @@ export class AdminSetScheduleComponent implements OnInit {
 
   vals: ScheduleFormValues;
 
-
-  dateStrings: string [] = [];
-  dateDates: Date[] = [];
-
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -33,21 +29,23 @@ export class AdminSetScheduleComponent implements OnInit {
   }
 
   string2Date(): void{
-  	this.dateDates[0] = new Date(this.dateStrings[0]);
-	  this.dateDates[0].setDate(this.dateDates[0].getDate()+1); //This line is here bc when I select date on bootstrap calendar it returns day - 1
-
-  	for (var i=1; i < 7; i++){
-	    this.dateDates[i] = new Date(this.dateDates[0]);
-	    this.dateDates[i].setDate(this.dateDates[0].getDate()+i);
-	    this.dateStrings[i] = this.dateDates[i].toString();
-	    this.dateStrings[i] = this.dateStrings[i].substr(0,15);
+  
+  	this.vals.dateDates[0] = new Date(this.vals.dateStrings[0]);
+	this.vals.dateDates[0].setDate(this.vals.dateDates[0].getDate()+1); //This line is here bc when I select date on bootstrap calendar it returns day - 1
+	
+	for (var i=1; i < 7; i++){
+	    this.vals.dateDates[i] = new Date(this.vals.dateDates[0]);
+	    this.vals.dateDates[i].setDate(this.vals.dateDates[0].getDate()+i);
+	    this.vals.dateStrings[i] = this.vals.dateDates[i].toString();
+	    this.vals.dateStrings[i] = this.vals.dateStrings[i].substr(0,15);
 	  }
 
-	  this.dateStrings[0] = this.dateDates[0].toString();
-	  this.dateStrings[0] = this.dateStrings[0].substr(0,15);
+	  this.vals.dateStrings[0] = this.vals.dateDates[0].toString();
+	  this.vals.dateStrings[0] = this.vals.dateStrings[0].substr(0,15);
 
-	  console.log("dateStrings[0]: ", this.dateStrings[0]);
-	  console.log("dateStrings[5]: ", this.dateStrings[5]);
+	  console.log("dateStrings[0]: ", this.vals.dateStrings[0]);
+	  console.log("dateStrings[5]: ", this.vals.dateStrings[5]);
+	
   }
 
   onSubmit(){
