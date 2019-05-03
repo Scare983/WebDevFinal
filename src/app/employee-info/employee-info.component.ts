@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import * as jquery from '../jquery.js';
 import * as bootstrap from '../bootstrap.min.js';
+import {ScheduleFormValues} from '../admin-set-schedule/ScheduleFormValues';
 
 
 
@@ -80,11 +81,18 @@ const httpOptions = {
   `,
   styleUrls: ['../bootstrap.min.css', '../app.component.css']
 })
-export class EmployeeInfoComponent {
+export class EmployeeInfoComponent implements OnInit{
   arrayOfEmployees = [ {fName:'Kevin0', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained: [0, 1, 2], gender:"M", userName:"Kev", password:"123" },{fName:'Kevin1', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained:[0, 1, 2], gender:"M", userName:"Kev", password:"123"} ];
   private serverURL = 'http://127.0.0.1:3000/';
 output;
+   arrayOfValues;
   constructor(private http: HttpClient) { }
+  ngOnInit() {
+
+    this.http.get(this.serverURL, httpOptions)
+      .subscribe(msg => this.arrayOfValues.push(msg));
+   //console.log(this.arrayOfValues);
+  }
 
   saveToDataBase(i) {
     //check database info of employee and if info is different, call the update functions.

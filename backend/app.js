@@ -15,12 +15,23 @@ getProcessor.getEmployeesWithShiftTypes(date,"12:00", "16:00", "C", function(err
   console.log(res);
 
 });*/
-app.post('/',function(req, res, next){
+/*app.post('/',function(req, res, next){
     res.json({msg: 'This is CORS-enabled for all origins!'});
 
     console.log("body: ", req.body.shopAMbools[0]);
 
     createSchedule(req.body);
+  next();
+});*/
+app.get('/', function(req, res, next) {
+  getProcessor.getAllEmployeeInfo(function (err, results) {
+    var newRes = JSON.stringify(results); //makes object into JSON string
+    var otherRes = JSON.parse(newRes); //makes JSON string into JSON object
+    res.json(newRes);
+    res.end();
+
+  });
+
 
 });
 

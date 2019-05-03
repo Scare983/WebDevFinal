@@ -4,8 +4,8 @@ class getSQLProcessor {
     this.conn = mysql.createPool({
         host: "localhost",
         user: "root",
-        password: "Darshan2!",
-        database: "dawgs_the_tee",
+        password: "root",
+        database: "dawgs@thetee",
         connectionLimit : 1000
       }
     );
@@ -98,7 +98,7 @@ class getSQLProcessor {
    */
   getAllEmployeeInfo(callback) {
     this.conn.getConnection(function(err, conn) {
-      var showEmployees = `SELECT fName, lName, employeeType, email, password, prefWeekends, prefNumOfShifts FROM employee_init JOIN employee ON employee.id = employee_init.id`;
+      var showEmployees = `SELECT fName, lName, employeeType, email, gender, userName, password, prefWeekends, prefNumOfShifts FROM employee_init JOIN employee ON employee.id = employee_init.id`;
       conn.query(showEmployees, function (err, results) {
         if (err) throw err;
         callback(err, results);
