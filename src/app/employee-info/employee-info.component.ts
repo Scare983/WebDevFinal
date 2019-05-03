@@ -86,10 +86,12 @@ export class EmployeeInfoComponent implements OnInit{
   private serverURL = 'http://127.0.0.1:3000/';
 output;
    arrayOfValues;
+
   constructor(private http: HttpClient) { }
   ngOnInit() {
     this.http.get(this.serverURL, httpOptions)
       .subscribe(msg => this.arrayOfValues.push(msg));
+    console.log(arrayOfValues);
 
    //console.log(this.arrayOfValues);
   }

@@ -32,87 +32,54 @@ app.get('/', function(req, res, next) {
    console.log(newRes);
   }); */
   getProcessor.getAllEmployeeInfoExceptRoles(function(err, results) {
-    var newRes = JSON.stringify(results); //makes object into JSON string
-    var otherRes = JSON.parse(newRes); //makes JSON string into JSON object
-    for(let m =0; m < results.length; m++) {
-      otherRes[m].roleTrained = [];
-    }
-    //console.log(results);
-    let final = JSON.stringify(otherRes);
-    getProcessor.getAllRoles(function(err, rolesList) {
     if (err) {
+      // TODO: send res error.
       console.error(err);
       return;
     }
-    console.log('rolesList' + rolesList);
 
-    let counter = 0;
-    // OUTPUT FORMAT:
-    /*
-    { fName: 'patrick',
-      lName: 'unknown',
-     employeeType: 'employee',
-      email: 'Patrick@gmail.com',
-      gender: 'M',
-      userName: 'changemeUGA21',
-      password: '123567',
-      prefWeekends: 0,
-      prefNumOfShifts: 2,
-      roleTrained: [ 'S', 'R', 'RR', 'C' ] 
-    */
-    for(let j =0; j < results.length; j++) {
-      let arr = [];
-      let idHere;
+    getProcessor.getAllRoles(function(err, rolesList) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log('rolesList' + rolesList);
+      // OUTPUT FORMAT:
+      /*[
+          fName: 'patrick',
+          lName: 'unknown',
+          employeeType: 'employee',
+          email: 'Patrick@gmail.com',
+          gender: 'M',
+          userName: 'changemeUGA21',
+          password: '123567',
+          prefWeekends: 0,
+          prefNumOfShifts: 2,
+          roleTrained: [ 'S', 'R', 'RR', 'C' ] 
+        ]
+      */
+      let joined = [];
+      for (let i = 0; i < results.length; i++) {
+        let joinedItem = {
+          ...results[i],
+          roleTrained: []
+        };
 
-      
-
-      // START
-      
-
-      
-
-
-
-
-      // END
-
-
-      //for (let i = counter; i < rolesList.length; i++) {
-      //  idHere = rolesList[i].id;
-      //  if (rolesList[i+1] == null) {
-      //    arr.push(rolesList[i].roleTrained);
-      //    break;
-      //  }
-      //  if (rolesList[i].id == rolesList[i + 1].id) {
-      //    arr.push(rolesList[i].roleTrained);
-      //    counter++;
-      //  }
-      //  else {
-      //    arr.push(rolesList[i].roleTrained);
-      //    counter += 1;
-      //    break;
-      //  }
-      //} // if same, add to array of roleTrained
-
-      // let canBreak = false;
-
-      // for (let z = 0; z < results.length; z++) {
-      //   if (results[z].id == idHere[0]) {
-
-      //     otherRes[z].roleTrained = arr;
-      //     console.log(otherRes[z]);
-      //   }
-      // }
-      // let final = JSON.stringify(otherRes);
-      //console.log(final);
-    }
-
-    // TODO: Send the result to client.
-
-
-
-      });
+        for (let j = 0; j < rolesList.length; j++) {
+          if (rolesList[j].id == joinedItem.id) {
+            joinedItem.roleTrained.push(rolesList[j].roleTrained);
+          }
+        }
+        
+        joined.push(joinedItem);
+      }
+      for (let k = 0; k < joined.length; k++) {
+        console.log(joined[k]);
+      }
+      console.log('sending: ' + joined);
+      res.send(joined);
     });
+  });
 });
   /*results.forEach(function(result){
     let arr = [];

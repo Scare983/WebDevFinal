@@ -258,7 +258,7 @@ class getSQLProcessor {
         callback(err, null);
         return;
       }
-      var showEmployees = `SELECT fName, lName, employeeType, email, gender, userName, password, prefWeekends, prefNumOfShifts FROM employee_init JOIN employee ON employee.id = employee_init.id`;
+      var showEmployees = `SELECT employee_init.id, fName, lName, employeeType, email, gender, userName, password, prefWeekends, prefNumOfShifts FROM employee_init JOIN employee ON employee.id = employee_init.id`;
       conn.query(showEmployees, function (err, results) {
         callback(err, results, conn);
       });
