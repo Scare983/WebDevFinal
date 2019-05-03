@@ -211,7 +211,7 @@ class getSQLProcessor {
       var day = date.getDay();
       getSQLProcessor.prototype.getDayRTOEmployees(date, function (err, offEmployee) {
         var arrOfIndexesToRemove = [];
-        var getEmployeeAvailableOnDay = `SELECT fName, lName, start_work_hour, end_work_hour FROM availability JOIN employee_init ON availability.id = employee_init.id JOIN roles ON availability.id= roles.id WHERE can_work_day ='${day}' AND start_work_hour between '${startOfSlotOfShift}' AND '${endTimeSlotOfShift}' AND end_work_hour between '${startOfSlotOfShift}' AND '${endTimeSlotOfShift}' AND roleTrained='${shiftType}'  `;
+        var getEmployeeAvailableOnDay = `SELECT fName, lName, employee_init.id, start_work_hour, end_work_hour FROM availability JOIN employee_init ON availability.id = employee_init.id JOIN roles ON availability.id= roles.id WHERE can_work_day ='${day}' AND start_work_hour <= '${startOfSlotOfShift}' AND end_work_hour >= '${endTimeSlotOfShift}' AND roleTrained='${shiftType}' `;
         conn.query(getEmployeeAvailableOnDay, function (err, results) {
           if (err) throw err;
           if (offEmployee != undefined) {

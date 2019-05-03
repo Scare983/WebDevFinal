@@ -14,7 +14,8 @@ const httpOptions = {
   selector: 'app-employee-info-changes',
   template: `    
     <div class="right_bar ">
-      <div class="tab-content ">
+      <div class="tab-content">
+        <button mat-button color="primary">Primary</button>
           <table class="table table-bordered table-editable">
               <thead>
                 <tr>
@@ -25,6 +26,7 @@ const httpOptions = {
                   <th>Gender</th>
                   <th>UserName</th>
                   <th>Password</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -61,7 +63,7 @@ const httpOptions = {
               </tbody>
             </table>
         </div>
-
+      
     </div>
 
 

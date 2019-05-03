@@ -7,7 +7,7 @@ import { AdminViewScheduleComponent } from './admin-view-schedule/admin-view-sch
 import { EmployeeInfoComponent} from './employee-info/employee-info.component';
 import {AdminRtoComponent} from './admin-rto-page/admin-rto.component';
 const routes: Routes = [
-
+  {path: '', redirectTo: 'admin-view-schedule', pathMatch: "full" },
   {path: 'heading', component: HeadingComponent},
   {path: 'admin-set-schedule', component: AdminSetScheduleComponent},
   {path: 'request-off-page', component: RequestOffPageComponent},
