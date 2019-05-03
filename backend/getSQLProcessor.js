@@ -39,7 +39,7 @@ class getSQLProcessor {
    * @param callback used to return results to calling class.
    */
 
-  
+
   getListOfEmployeeAvailableDaysAndTimes(fName, lName, callback) {
     this.conn.getConnection(function(err, conn) {
       var sqlSelectSingleEmployee = `SELECT fName, lName, can_work_day, start_work_hour, end_work_hour FROM employee_init JOIN availability ON employee_init.id = availability.id WHERE lName = '${lName}' AND fName = '${fName}'`;
@@ -211,7 +211,17 @@ class getSQLProcessor {
       var day = date.getDay();
       getSQLProcessor.prototype.getDayRTOEmployees(date, function (err, offEmployee) {
         var arrOfIndexesToRemove = [];
-        var getEmployeeAvailableOnDay = `SELECT fName, lName, employee_init.id, start_work_hour, end_work_hour FROM availability JOIN employee_init ON availability.id = employee_init.id JOIN roles ON availability.id= roles.id WHERE can_work_day ='${day}' AND start_work_hour <= '${startOfSlotOfShift}' AND end_work_hour >= '${endTimeSlotOfShift}' AND roleTrained='${shiftType}' `;
+        var getEmployeeAvailableOnDay =
+          `SELECT fName, lName, employee_init.id, employee.gender, start_work_hour, end_work_hour
+            FROM availability
+              JOIN employee_init ON availability.id = employee_init.id
+              JOIN roles ON availability.id= roles.id
+              JOIN employee ON availability.id = employee.id
+                WHERE can_work_day ='${day}'
+                  AND start_work_hour <= '${startOfSlotOfShift}'
+                  AND end_work_hour >= '${endTimeSlotOfShift}'
+                  AND roleTrained='${shiftType}'
+          `;
         conn.query(getEmployeeAvailableOnDay, function (err, results) {
           if (err) throw err;
           if (offEmployee != undefined) {
