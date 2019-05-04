@@ -91,9 +91,6 @@ export class EmployeeInfoComponent implements OnInit {
   array = [];
   private serverURL = 'http://127.0.0.1:3000/';
 
-getData(): Observable<any> {
-  return this.http.get(this.serverURL).map(res => res.json());
-}
 
   constructor(private http: HttpClient) { }
   ngOnInit() {
