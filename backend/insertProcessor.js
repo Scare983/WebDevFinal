@@ -7,7 +7,7 @@ class insertProcessor {
         host: "localhost",
         user: "root",
         password: "root",
-        database: "dawgs_the_tee",
+        database: "dawgs@thetee",
         connectionLimit : 1000
       }
     );
@@ -48,14 +48,14 @@ class insertProcessor {
 //used for admin to insert a NEW employee.
 
 
-   createEmployeeCredentials(userName, password, fName, lName, employeeType, email, gender, prefNumShift = 5, prefWeekend = 0) {
+   createEmployeeCredentials(userName, password, fName, lName, employeeType, email, gender, prefNumShift = 5, prefWeekend = 0, callback) {
     var sql = `INSERT INTO employee_init (userName, password, fName, lName) VALUES ('${userName}', '${password}', '${fName}', '${lName}')`;
     this.conn.getConnection(function(err, conn) {
-      if(err) throw err;
-      conn.query(sql, function (err) {
-        if (err) throw err;
+      if (err)   callback(err, null);
+      conn.query(sql, function (err, result) {
+        if (err) callback(err, null);
         console.log("1 record inserted into employee_init.");
-        insertProcessor.prototype.createEmployeeInfo(fName, lName, employeeType, email, gender, prefNumShift, prefWeekend, conn);
+        insertProcessor.prototype.createEmployeeInfo(fName, lName, employeeType, email, gender, prefNumShift, prefWeekend, conn, callback); //this ends with the callback.
       });
      }
    );
@@ -64,15 +64,15 @@ class insertProcessor {
 //this method may be nested within createEmployeeCredentials, if so, update the parameters of said function.
 
 
-  createEmployeeInfo(fName, lName, employeeType, email, gender, prefNumShift, prefWeekend, conn) {
+  createEmployeeInfo(fName, lName, employeeType, email, gender, prefNumShift, prefWeekend, conn, callback) {
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
       conn.query(sqlUserID, function (err, result) {
-      if (err) throw err;
+        if (err)   callback(err, null);
       if (result.length > 0) {
         var sqlEmployee = `INSERT INTO employee (id, employeeType, email, gender, prefNumOfShifts, prefWeekends) VALUES ('${result[0].id}', '${employeeType}', '${email}', '${gender}', '${prefNumShift}', '${prefWeekend}')`;
-        conn.query(sqlEmployee, function (err) {
-          if (err) throw err;
+        conn.query(sqlEmployee, function (err, result) {
           console.log("1 record inserted into employee.");
+          callback(err, result);
         });
       }
     });
@@ -80,16 +80,17 @@ class insertProcessor {
 
 
 
-  updatePassword(fName, lName, newPass) {
+  updatePassword(fName, lName, newPass, callback) {
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
     this.conn.getConnection(function(err, conn) {
+      if (err)   callback(err, null);
       conn.query(sqlUserID, function (err, result) {
-        if (err) throw err;
+        if (err) callback(err, null);
         if (result.length > 0) {
           var sqlEmployeeUpdate = `UPDATE employee_init SET password = '${newPass}' WHERE id = '${result[0].id}'`;
           conn.query(sqlEmployeeUpdate, function (err) {
-            if (err) throw err;
             console.log("Updated password " + lName + " to " + newPass);
+            callback(err, result);
           });
         }
       });
@@ -98,16 +99,17 @@ class insertProcessor {
 
 
 
-  updateUserName(fName, lName, newUserName) {
+  updateUserName(fName, lName, newUserName, callback) {
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
     this.conn.getConnection(function(err, conn) {
+      if (err)   callback(err, null);
       conn.query(sqlUserID, function (err, result) {
-        if (err) throw err;
+        if (err)   callback(err, null);
         if (result.length > 0) {
           var sqlEmployeeUpdate = `UPDATE employee_init SET userName = '${newUserName}' WHERE id = '${result[0].id}'`;
           conn.query(sqlEmployeeUpdate, function (err) {
-            if (err) throw err;
             console.log("Updated username of " + lName + " to " + newUserName);
+            callback(err, result);
           });
         }
       });
@@ -121,16 +123,17 @@ class insertProcessor {
    */
 
 
-  updateEmployeeType(fName, lName, updatedType) {
+  updateEmployeeType(fName, lName, updatedType, callback) {
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
     this.conn.getConnection(function(err, conn) {
       conn.query(sqlUserID, function (err, result) {
-        if (err) throw err;
+        if (err)   callback(err, null);
         if (result.length > 0) {
           var sqlEmployeeUpdate = `UPDATE employee SET employeeType = '${updatedType}' WHERE id = '${result[0].id}'`;
           conn.query(sqlEmployeeUpdate, function (err) {
             if (err) throw err;
             console.log("Updated " + lName + " to " + updatedType);
+            callback(err, result);
           });
         }
       });
@@ -143,16 +146,16 @@ class insertProcessor {
    */
 
 
-  updateEmployeePrefWeekends(fName, lName, preferenceNumber) {
+  updateEmployeePrefWeekends(fName, lName, preferenceNumber, callback) {
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
     this.conn.getConnection(function(err, conn) {
       conn.query(sqlUserID, function (err, result) {
-        if (err) throw err;
+        if (err) throw   callback(err, null);
         if (result.length > 0) {
           var sqlEmployeeUpdate = `UPDATE employee SET prefWeekends = '${preferenceNumber}' WHERE id = '${result[0].id}'`;
           conn.query(sqlEmployeeUpdate, function (err) {
-            if (err) throw err;
             console.log("Updated " + lName + " to " + preferenceNumber);
+            callback(err, result);
           });
         }
       });
@@ -164,16 +167,18 @@ class insertProcessor {
    * @param preferenceNumber changing days this person perfers to work.  Is taken into account for schedule algorithm
    */
 
-  updateEmployeePrefShifts(fName, lName, preferenceNumber) {
+  updateEmployeePrefShifts(fName, lName, preferenceNumber, callback) {
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
     this.conn.getConnection(function(err, conn) {
+      if (err)  callback(err, null);
       conn.query(sqlUserID, function (err, result) {
-        if (err) throw err;
+        if (err)  callback(err, null);
         if (result.length > 0) {
           var sqlEmployeeUpdate = `UPDATE employee SET prefNumOfShifts = '${preferenceNumber}' WHERE id = '${result[0].id}'`;
-          conn.query(sqlEmployeeUpdate, function (err) {
+          conn.query(sqlEmployeeUpdate, function (err, result) {
             if (err) throw err;
             console.log("Updated " + lName + " to " + preferenceNumber);
+            callback(err, result);
           });
         }
       });
@@ -189,16 +194,17 @@ class insertProcessor {
    * @param reason is employee reason of reqOff
    */
 
-  requestedDayOff(fName, lName, reqStartDate, reqEndDate, reason) {
+  requestedDayOff(fName, lName, reqStartDate, reqEndDate, reason, callback) {
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
     this.conn.getConnection(function(err, conn) {
+      if (err)  callback(err, null);
       conn.query(sqlUserID, function (err, result) {
-        if (err) throw err;
+        if (err)  callback(err, null);
         if (result.length > 0) {
           //make sure this statement has default value 'pending' in reqAccpted.
           var sqlEmployeeUpdate = `INSERT INTO rto (id, reqOffStart, reqOffEnd, reason) VALUES ('${result[0].id}', '${reqStartDate}', '${reqEndDate}', '${reason}')`;
-          conn.query(sqlEmployeeUpdate, function (err) {
-            if (err) throw err;
+          conn.query(sqlEmployeeUpdate, function (err, result) {
+            callback(err, result);
             console.log("Inserted " + lName + " RTO from  " + reqStartDate + " to " + reqEndDate);
           });
         }
@@ -213,17 +219,18 @@ class insertProcessor {
    * @param adminAnswer is either chosen from ENum as:  accepted or denied <= capitalization matters
    */
 
-  adminUpdatePendingRTO(fName, lName, reqStartDate, reqEndDate, adminAnswer) {  //this is glitchy.  Updates ID and doesnt consider the dates being inputted.
+  adminUpdatePendingRTO(fName, lName, reqStartDate, reqEndDate, adminAnswer, callback) {  //this is glitchy.  Updates ID and doesnt consider the dates being inputted.
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
     this.conn.getConnection(function(err, conn) {
+      if (err)  callback(err, null);
       conn.query(sqlUserID, function (err, result) {
-        if (err) throw err;
+        if (err)  callback(err, null);
         if (result.length > 0) {
           //make sure this statement has default value 'pending' in reqAccpted.
           var sqlEmployeeUpdate = `UPDATE rto SET reqStatus = '${adminAnswer}' WHERE reqOffStart='${reqStartDate}' AND id='${result[0].id}' AND reqOffEnd='${reqEndDate}'`;
-          conn.query(sqlEmployeeUpdate, function (err) {
-            if (err) throw err;
+          conn.query(sqlEmployeeUpdate, function (err, result) {
             console.log("Updated " + lName + " reqOffStatus to " + adminAnswer);
+            callback(err, result)
           });
         }
       });
@@ -235,17 +242,18 @@ class insertProcessor {
    * @param added is the single role trained in: ST, C, R, RR, T, TC, S
    */
 
-  rolesTrained(fName, lName, added) { //before use this method, only pass through roles which the user already doesnt have. TO do this, a for loop, get results from select query and add the different ones within the for loop
+  rolesTrained(fName, lName, added, callback) { //before use this method, only pass through roles which the user already doesnt have. TO do this, a for loop, get results from select query and add the different ones within the for loop
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
     this.conn.getConnection(function(err, conn) {
+      if (err)  callback(err, null);
       conn.query(sqlUserID, function (err, result) {
-        if (err) throw err;
+       if(err)  callback(err, null);
         if (result.length > 0) {
           //make sure this statement has default value 'pending' in reqAccpted.
           var sqlEmployeeUpdate = `INSERT INTO roles (id, roleTrained) VALUES ('${result[0].id}', '${added}')`;
-          conn.query(sqlEmployeeUpdate, function (err) {
-            if (err) throw err;
+          conn.query(sqlEmployeeUpdate, function (err, result) {
             console.log("Updated " + lName + " reqOffAccepted to " + added);
+            callback(err, result)
           });
         }
       });
@@ -264,17 +272,17 @@ class insertProcessor {
    * @param newEndTime is the new endTime on that day they wish to end the work day .
    */
 
-  updateAvailability(fName, lName, workableDay, newStartTime, newEndTime) {  //change the days which they are available
+  updateAvailability(fName, lName, workableDay, newStartTime, newEndTime, callback) {  //change the days which they are available
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
     this.conn.getConnection(function(err, conn) {
+      if(err) callback(err, null);
       conn.query(sqlUserID, function (err, result) {
         var sqlEmployeeUpdate = `UPDATE availability SET start_work_hour= '${newStartTime}', end_work_hour= '${newEndTime}' WHERE can_work_day = '${workableDay}' AND id = ${result[0].id}`;
         if (err) throw err;
         if (result.length > 0) {
-          conn.query(sqlEmployeeUpdate, function (err) {
-            if (err) throw err;
+          conn.query(sqlEmployeeUpdate, function (err, result) {
             console.log("Updated " + lName + " work availability on " + workableDay);
-
+            callback(err, result)
           });
         }
       });
@@ -282,17 +290,17 @@ class insertProcessor {
   }
 
 
-  insertAvailabilityForNull(fName, lName, workableDay, startTime, endTime) {
+  insertAvailabilityForNull(fName, lName, workableDay, startTime, endTime, callback) {
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
     this.conn.getConnection(function(err, conn) {
+      if (err)  callback(err, null);
       conn.query(sqlUserID, function (err, result) {
-        if (err) throw err;
+        if (err) callback(err, null);
         if (result.length > 0) {
           var sqlEmployeeUpdate = `INSERT INTO availability (id, can_work_day, start_work_hour, end_work_hour) VALUES ('${result[0].id}', '${workableDay}', '${startTime}', '${endTime}')`;
-          conn.query(sqlEmployeeUpdate, function (err) {
-            if (err) throw err;
+          conn.query(sqlEmployeeUpdate, function (err, result) {
             console.log("Inserted " + lName + " work availability on " + workableDay);
-
+            callback(err, result)
           });
         }
       });
@@ -307,17 +315,18 @@ class insertProcessor {
    * @param endWorkTime time this person will end work in TIME format HH:MM:SS ARMY time
    * @param role is roll for worker to be on that work day chosen from ENUM: ST, C, R, RR, T, TC, S
    */
-  insertScheduleForNull(fName, lName, assignedWorkDay, startWorkTime, endWorkTime, role) { //If the set from the select shwows that they are not working that day, add it otherwise, update their workdays.
+  insertScheduleForNull(fName, lName, assignedWorkDay, startWorkTime, endWorkTime, role, callback) { //If the set from the select shwows that they are not working that day, add it otherwise, update their workdays.
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
     this.conn.getConnection(function(err, conn) {
+      if(err) callback(err, null);
       conn.query(sqlUserID, function (err, result) {
         if (err) throw err;
         if (result.length > 0) {
           //make sure this statement has default value 'pending' in reqAccpted.
           if (err) throw err;
           var sqlEmployeeUpdate = `INSERT INTO schedule (id, work_date, start_work_hour, end_work_hour, role) VALUES ('${result[0].id}', '${assignedWorkDay}', '${startWorkTime}', '${endWorkTime}', '${role}')`;
-          conn.query(sqlEmployeeUpdate, function (err) {
-            if (err) throw err;
+          conn.query(sqlEmployeeUpdate, function (err, result) {
+           callback(err, result)
           });
         }
       });
@@ -332,14 +341,15 @@ class insertProcessor {
    * @param role is roll for worker to be on that work day chosen from ENUM: ST, C, R, RR, T, TC, S
    *
    */
-  updateSchedule(fName, lName, assignedWorkDayToUpdate, newStartWorkTime, newEndWorkTime, role) {  //change the days which they are available
+  updateSchedule(fName, lName, assignedWorkDayToUpdate, newStartWorkTime, newEndWorkTime, role, callback) {  //change the days which they are available
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
     this.conn.getConnection(function(err, conn) {
+      if(err) callback(err, null);
       conn.query(sqlUserID, function (err, result) {
         if (result.length > 0) {
           var sqlEmployeeUpdate = `UPDATE schedule SET work_date= '${newStartWorkTime}', end_work_hour= '${newEndWorkTime}', role= '${role}' WHERE work_date = '${assignedWorkDayToUpdate}' AND id = ${idPass}`;
-          conn.query(sqlEmployeeUpdate, function (err) {
-            if (err) throw err;
+          conn.query(sqlEmployeeUpdate, function (err, result) {
+            callback(err, result);
             console.log("Updated " + lName + " to work schedule on " + assignedWorkDayToUpdate);
           });
         }
@@ -347,13 +357,16 @@ class insertProcessor {
     });
   }
 
-  deleteUser(fName, lName) { //deletes on cascade.  Which means the Database will remove the user from ALL tables this person is in because table is setup like that.
+  deleteUser(fName, lName, callback) { //deletes on cascade.  Which means the Database will remove the user from ALL tables this person is in because table is setup like that.
     this.conn.getConnection(function(err, conn) {
       var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
+      if (err) {
+        callback(err, null);
+      }
       conn.query(sqlUserID, function (err, result) {
         var sqlDeleteUser = `DELETE FROM employee_init WHERE id='${result[0].id}'`;
-        conn.query(sqlDeleteUser, function (err) {
-          if (err) throw err;
+        conn.query(sqlDeleteUser, function (err, result) {
+          callback(err, result);
         });
       });
     });

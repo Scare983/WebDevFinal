@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import 'rxjs/add/operator/map';
 import { catchError, map, tap } from 'rxjs/operators';
 import * as jquery from '../jquery.js';
 import * as bootstrap from '../bootstrap.min.js';
+import {ScheduleFormValues} from '../admin-set-schedule/ScheduleFormValues';
+import {forEach} from '@angular/router/src/utils/collection';
+import {stringify} from 'querystring';
 
 
 
@@ -13,6 +17,7 @@ const httpOptions = {
 @Component({
   selector: 'app-employee-info-changes',
   template: `    
+    
     <div class="right_bar ">
       <div class="tab-content">
         <button mat-button color="primary">Primary</button>
@@ -80,15 +85,43 @@ const httpOptions = {
   `,
   styleUrls: ['../bootstrap.min.css', '../app.component.css']
 })
-export class EmployeeInfoComponent {
-  arrayOfEmployees = [ {fName:'Kevin0', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained: [0, 1, 2], gender:"M", userName:"Kev", password:"123" },{fName:'Kevin1', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained:[0, 1, 2], gender:"M", userName:"Kev", password:"123"} ];
-  private serverURL = 'http://127.0.0.1:3000/';
-output;
+export class EmployeeInfoComponent implements OnInit {
+  arrayOfEmployees = []//[ {fName:'Kevin0', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained: [0, 1, 2], gender:"M", userName:"Kev", password:"123" },{fName:'Kevin1', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained:[0, 1, 2], gender:"M", userName:"Kev", password:"123"} ];
+  arrayOfEmployee =[] ;//=  {fName:, lName:, employeeType:, email:, roleTrained:, gender:, userName:, password:};
+
+  array = [];
+  private serverURL = 'http://localhost:3000/employee-info';
+
+
   constructor(private http: HttpClient) { }
+  ngOnInit() {
+      fetch(this.serverURL).then(response => {
+        return response.json();
+      }).then(myJson => {
+        this.array.push(myJson);
+        /*for (var id in myJson) {
+          var newObj = {};
+          if ( myJson.hasOwnProperty(id)) {
+            newObj = {id: myJson[id] };
+            this.array.push(newObj);
+          }
+        }*/
+          for(var i = 0; i <this.array[0].length;i++ ) {
+            this.arrayOfEmployees.push(this.array[0][i]);
+          }
+          console.log(this.arrayOfEmployees);
+
+
+
+
+      });
+
+   //console.log(this.arrayOfValues);
+  }
 
   saveToDataBase(i) {
     //check database info of employee and if info is different, call the update functions.
    // if(this.arrayOfEmployees[i].employeeType != )
-    this.output = "saved to index " + i;
+
   }
 }

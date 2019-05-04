@@ -1,11 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-employee-rto',
   template: `
-    <div class="right_bar">
-      <h2>List of Employees Who have Requested Times Off</h2>
-      <div class="tab-content ">
-        
+    <div *ngIf="arrayOfEmployeesRTO.length > 0" class="right_bar">
+      <h2>List of Employees Who have <b>PENDING</b> Requested Times Off</h2>
+      <div class="tab-content">
       <table class="table table-bordered">
         <thead>
            <tr>
@@ -19,16 +18,16 @@ import {Component} from '@angular/core';
         <tbody >
           <tr *ngFor="let employee of arrayOfEmployeesRTO; let i = index">
             <td>
-              Name {{employee}}
+         {{employee.fName + " " + employee.lName}}
             </td>
             <td>
-              Requested Off Start Date {{employee}}
+              {{employee.reqOffStart}}
             </td>
             <td>
-              Requested Off End Date {{employee}}
+             {{employee.reqOffEnd}}
             </td>
             <td>
-              Reason
+              {{employee.reason}}
             </td>
             <td>
               <button (click)="onClickMeAccept(i)"> Accept</button>
@@ -37,20 +36,42 @@ import {Component} from '@angular/core';
           </tr>
         </tbody>
       </table>
-    </div>
+      </div>
+     </div>
+  <div *ngIf="arrayOfEmployeesRTO.length == 0" class="right_bar">
+    <h1>No One is looking for a day off!</h1>
   </div>
   `,
   styleUrls: ['../bootstrap.min.css','../app.component.css']
 })
-export class AdminRtoComponent {
-  user = 'kevin';
-    arrayOfEmployeesRTO = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];//methodThat gets array of employees
-    getEmployeeFName() {
-     // return this.arrayOfEmployeesRTO.fName;
-    }
-    getEmployeeLname() {
-    //  return this.arrayOfEmployeesRTO
-    }
+export class AdminRtoComponent implements  OnInit {
+  private serverURL = 'http://localhost:3000/admin-rto';
+    arrayOfEmployeesRTO = [];//methodThat gets array of employees
+  array = [];
+  ngOnInit() {
+    fetch(this.serverURL).then(response => {
+      return response.json();
+    }).then(myJson => {
+      let newObj(myJson, "reqOffStart", ) =  (jsonObj, field, oldvalue)  => {
+      for( var k = 0; k < jsonObj[0].length; k++ ) {
+          let date = new Date(oldvalue);
+          let i = date.getMonth() + '-' + date.getDate() + '-' + date.getFullYear();
+          jsonObj[0][k][field] = i;
+        }
+      return jsonObj;
+      };
+      //let i = date.getMonth() + '-' + date.getDate() + '-' + date.getFullYear();
+
+
+      this.array.push(myJson);
+      for (var i = 0; i < this.array[0].length; i++) {
+
+        this.arrayOfEmployeesRTO.push(this.array[0][i]);
+      }
+      console.log(this.arrayOfEmployeesRTO);
+    });
+    //console.log(this.arrayOfValues);
+  }
   onClickMeAccept(i: number) {
     if(confirm('Are you sure to Accept the request for:' + i)) {
       console.log('Change the database');

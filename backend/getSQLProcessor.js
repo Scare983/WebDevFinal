@@ -1,16 +1,17 @@
 class getSQLProcessor {
   constructor() {
     var mysql = require('mysql');
+    var util = require('util');
     this.conn = mysql.createPool({
         host: "localhost",
         user: "root",
-        password: "Darshan2!",
-        database: "dawgs_the_tee",
+        password: "root",
+        database: "dawgs@thetee",
         connectionLimit : 1000
       }
     );
+    // this.conn.query = util.promisify(this.conn.query);
   }
-
 //<====================TESTING===================>
 //  dateTest = new Date(2000, 7, 14);
 //getListOfEmployeeAvailableDaysAndTimes("evan", "verma", function(err, results) {
@@ -41,6 +42,7 @@ class getSQLProcessor {
 
 
   getListOfEmployeeAvailableDaysAndTimes(fName, lName, callback) {
+
     this.conn.getConnection(function(err, conn) {
       var sqlSelectSingleEmployee = `SELECT fName, lName, can_work_day, start_work_hour, end_work_hour FROM employee_init JOIN availability ON employee_init.id = availability.id WHERE lName = '${lName}' AND fName = '${fName}'`;
       conn.query(sqlSelectSingleEmployee, function (err, results) {
@@ -48,6 +50,7 @@ class getSQLProcessor {
         callback(err, results);
       });
     });
+
   }
 
   /**returns a list of all employees containing:  monday, tuesday, thursday, friday, saturday, sunday with what work they can do on each of those days.
@@ -73,7 +76,6 @@ class getSQLProcessor {
     this.conn.getConnection(function(err, conn) {
       var getAllRTO = `SELECT fName, lName, reqOffStart, reqOffEnd, reason FROM employee_init JOIN rto ON employee_init.id = rto.id WHERE reqStatus = 'pending' `;
       conn.query(getAllRTO, function (err, results) {
-        if (err) throw err;
         callback(err, results);
       });
     });
@@ -98,9 +100,12 @@ class getSQLProcessor {
    */
   getAllEmployeeInfo(callback) {
     this.conn.getConnection(function(err, conn) {
-      var showEmployees = `SELECT fName, lName, employeeType, email, password, prefWeekends, prefNumOfShifts FROM employee_init JOIN employee ON employee.id = employee_init.id`;
+    /*  if (err) {
+        callback(err, null);
+        return;
+      } */
+      var showEmployees = `SELECT fName, lName, employeeType, email, gender, userName, password, prefWeekends, prefNumOfShifts FROM employee_init JOIN employee ON employee.id = employee_init.id`;
       conn.query(showEmployees, function (err, results) {
-        if (err) throw err;
         callback(err, results);
       });
     });
@@ -179,9 +184,7 @@ class getSQLProcessor {
     });
   }
 
-//helper method but can be used if needed.
-
-
+  // helper method but can be used if needed.
   getDayRTOEmployees(date, callback, conn) {
     var getDayRTO = `SELECT fName, lName FROM employee_init  JOIN rto ON employee_init.id = rto.id WHERE reqStatus='accepted' AND '${date}' between reqOffStart AND reqOffEnd`;
     conn.query(getDayRTO, function (err, results) {
@@ -250,8 +253,17 @@ class getSQLProcessor {
       }, conn);
     });
   }
-
-
-
+  getAllRoles(callback) {
+    this.conn.query(`SELECT *  FROM roles`, function (err, results) {
+      callback(err, results);
+    });
+  }
+  getAllEmployeeInfoExceptRoles(callback) {
+    var showEmployees = `SELECT employee_init.id, fName, lName, employeeType, email, gender, userName, password, prefWeekends, prefNumOfShifts FROM employee_init JOIN employee ON employee.id = employee_init.id`;
+    this.conn.query(showEmployees, function (err, results) {
+      callback(err, results);
+    });
+  }
 }
 module.exports = getSQLProcessor;
+B
