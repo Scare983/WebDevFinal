@@ -76,7 +76,6 @@ class getSQLProcessor {
     this.conn.getConnection(function(err, conn) {
       var getAllRTO = `SELECT fName, lName, reqOffStart, reqOffEnd, reason FROM employee_init JOIN rto ON employee_init.id = rto.id WHERE reqStatus = 'pending' `;
       conn.query(getAllRTO, function (err, results) {
-        if (err) throw err;
         callback(err, results);
       });
     });

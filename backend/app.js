@@ -3,7 +3,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const getSQLProcessor = require('./getSQLProcessor');
 const insertProcessor = require('./insertProcessor');
-
 var app = express();
 var getProcessor = new getSQLProcessor();
 var queryInsert = new insertProcessor();
@@ -15,13 +14,22 @@ getProcessor.getEmployeesWithShiftTypes(date,"12:00", "16:00", "C", function(err
   console.log(res);
 
 });*/
+var date = new Date("2015-5-10");
+
+var dat1 = new Date("2015-10-10");
+/*queryInsert.requestedDayOff("evan", "verma", "2015-5-10", "2015-10-10", " a", function(err, res) {
+  if(err) {
+  }
+  if(res) console.log("yay");
+});*/
+
 app.post('/',function(req, res, next){
     res.json({msg: 'This is CORS-enabled for all origins!'});
     console.log("body: ", req.body.shopAMbools[0]);
     createSchedule(req.body);
 });
 
-app.get('/', function(req, res, next) {
+app.get('/employee-info', function(req, res, next) {
   getProcessor.getAllEmployeeInfoExceptRoles(function(err, results) {
     if (err) {
       next(err);
@@ -58,6 +66,26 @@ app.get('/', function(req, res, next) {
   });
 });
 
+app.get('/admin-rto', function(req, res, next) {
+  getProcessor.getListOfEmployeeRTO(function(err, results) {
+    if (err) {
+      next(err);
+      return;
+    }
+      let joined = [];
+      for (let i = 0; i < results.length; i++) {
+        let joinedItem = {
+          ...results[i],
+        };
+        joined.push(joinedItem);
+      }
+      for (let k = 0; k < joined.length; k++) {
+        console.log(joined[k]);
+      }
+      console.log('sending: ' + joined);
+      res.json(joined);
+  });
+});
 
 app.use(function(err, req, res, next) {
   console.error(err);

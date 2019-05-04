@@ -17,6 +17,7 @@ const httpOptions = {
 @Component({
   selector: 'app-employee-info-changes',
   template: `    
+    
     <div class="right_bar ">
       <div class="tab-content">
         <button mat-button color="primary">Primary</button>
@@ -89,7 +90,7 @@ export class EmployeeInfoComponent implements OnInit {
   arrayOfEmployee =[] ;//=  {fName:, lName:, employeeType:, email:, roleTrained:, gender:, userName:, password:};
 
   array = [];
-  private serverURL = 'http://127.0.0.1:3000/';
+  private serverURL = 'http://localhost:3000/employee-info';
 
 
   constructor(private http: HttpClient) { }
