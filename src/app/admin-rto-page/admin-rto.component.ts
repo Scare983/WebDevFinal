@@ -46,8 +46,6 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class AdminRtoComponent implements  OnInit {
-       ngOnInit(){}
-/*
   private serverURL = 'http://localhost:3000/admin-rto';
     arrayOfEmployeesRTO = [];//methodThat gets array of employees
   array = [];
@@ -85,5 +83,4 @@ export class AdminRtoComponent implements  OnInit {
 
     }
   }
-*/
 }
