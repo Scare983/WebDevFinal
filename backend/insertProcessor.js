@@ -78,8 +78,6 @@ class insertProcessor {
     });
   }
 
-
-
   updatePassword(fName, lName, newPass, callback) {
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
     this.conn.getConnection(function(err, conn) {

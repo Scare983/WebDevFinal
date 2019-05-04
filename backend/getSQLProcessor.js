@@ -1,7 +1,6 @@
 class getSQLProcessor {
   constructor() {
     var mysql = require('mysql');
-    var util = require('util');
     this.conn = mysql.createPool({
         host: "localhost",
         user: "root",

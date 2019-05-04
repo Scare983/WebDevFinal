@@ -21,7 +21,7 @@ var dat1 = new Date("2015-10-10");
   }
   if(res) console.log("yay");
 });*/
-app.post('/',function(req, res, next){
+app.post('/admin-set-schedule',function(req, res, next){
     res.json({msg: 'This is CORS-enabled for all origins!'});
     console.log("body: ", req.body.shopAMbools[0]);
     createSchedule(req.body);
