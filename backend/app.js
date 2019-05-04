@@ -17,7 +17,7 @@ app.use( bodyParser.json() );
   }
   if(res) console.log("yay");
 });*/
-app.post('/',function(req, res, next){
+app.post('/admin-set-schedule',function(req, res, next){
     res.json({msg: 'This is CORS-enabled for all origins!'});
     console.log("body: ", req.body.shopAMbools[0]);
     createSchedule(req.body);
@@ -74,6 +74,13 @@ app.get('/admin-rto', function(req, res, next) {
         joined.push(joinedItem);
       }
       for (let k = 0; k < joined.length; k++) {
+        let dateStart = new Date(joined[k].reqOffStart);
+        let dateFormat = dateStart.getMonth() + '-' + dateStart.getDate() + '-' + dateStart.getFullYear();
+        joined[k].reqOffStart = dateFormat;
+
+        let dateEnd = new Date(joined[k].reqOffEnd);
+        let dateFormatEnd = dateEnd.getMonth() + '-' + dateEnd.getDate() + '-' + dateEnd.getFullYear();
+        joined[k].reqOffEnd = dateFormatEnd;
         console.log(joined[k]);
       }
       console.log('sending: ' + joined);
@@ -161,26 +168,26 @@ function createSchedule(body){
 
 //==================== NOT WORKING ==================================================//
 
-            console.log("shopAMworkers.length: ", shopAMworkers.length);
+          console.log("shopAMworkers.length: ", shopAMworkers.length);
 
-            for(var i=0;i<shopAMworkers.length;i++){
-          console.log("here");
-          console.log("shopAMworker[",i,"].fName: ", shopAMworkers[i].fName);
+          for(var i=0;i<shopAMworkers.length;i++){
+              console.log("here");
+              console.log("shopAMworker[",i,"].fName: ", shopAMworkers[i].fName);
 
-          fs.readFile(shopFileName,'utf8',function(err, data){
-            var searchedName = shopAMworkers[i].fName.concat(' ', shopAMworkers[i].lName);
-            var pos = data.indexOf( searchedName );
-            console.log("pos: ", pos);
+              fs.readFile(shopFileName,'utf8',function(err, data){
+		  var searchedName = shopAMworkers[i].fName.concat(' ', shopAMworkers[i].lName);
+		  var pos = data.indexOf( searchedName );
+		  console.log("pos: ", pos);
 
-            for (var i=0;i < (shopAMworkers[i].can_work_day+2);i++)
-              pos = data.indexOf(',',pos) + 1;
+		  for (var i=0;i < (shopAMworkers[i].can_work_day+2);i++)
+		      pos = data.indexOf(',',pos) + 1;
 
-            var shiftInfoString =
-              ` ${body.shopAMtimes[shopAMworkers[i].can_work_day]}-${body.shopPMtimes[shopAMworkers[i].can_work_day]}, `;
+		  var shiftInfoString =
+		      ` ${body.shopAMtimes[shopAMworkers[i].can_work_day]}-${body.shopPMtimes[shopAMworkers[i].can_work_day]}, `;
 
-            fs.write(shopFD,shiftInfoString,pos,function(err){});
+		  fs.write(shopFD,shiftInfoString,pos,function(err){});
 
-          });
+              });
 
           }
 

@@ -55,26 +55,20 @@ export class AdminRtoComponent implements  OnInit {
     fetch(this.serverURL).then(response => {
       return response.json();
     }).then(myJson => {
-      let newObj(myJson, "reqOffStart", ) =  (jsonObj, field, oldvalue)  => {
-      for( var k = 0; k < jsonObj[0].length; k++ ) {
-          let date = new Date(oldvalue);
-          let i = date.getMonth() + '-' + date.getDate() + '-' + date.getFullYear();
-          jsonObj[0][k][field] = i;
-        }
-      return jsonObj;
-      };
+
       //let i = date.getMonth() + '-' + date.getDate() + '-' + date.getFullYear();
 
 
       this.array.push(myJson);
-      for (var i = 0; i < this.array[0].length; i++) {
 
+      for (var i = 0; i < this.array[0].length; i++) {
         this.arrayOfEmployeesRTO.push(this.array[0][i]);
       }
-      console.log(this.arrayOfEmployeesRTO);
+ //     console.log(this.arrayOfEmployeesRTO["reqOffStart"]);
     });
     //console.log(this.arrayOfValues);
   }
+
   onClickMeAccept(i: number) {
     if(confirm('Are you sure to Accept the request for:' + i)) {
       console.log('Change the database');

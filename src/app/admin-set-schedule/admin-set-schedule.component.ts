@@ -18,7 +18,7 @@ const httpOptions = {
 
 export class AdminSetScheduleComponent implements OnInit {
 
-  private serverURL = 'http://127.0.0.1:3000/';
+  private serverURL = 'http://127.0.0.1:3000/admin-set-schedule';
 
   vals: ScheduleFormValues;
 
