@@ -69,7 +69,15 @@ app.use(function(err, req, res, next) {
 app.listen(3000);
 
 function createSchedule(body){
-  console.log("schedule(body): ", body);
+  console.log("body: ", body);
+
+  var scheduleDays = new Array(7);
+
+  //fix data in dates array
+  for (var i=0;i<7;i++){
+    scheduleDays[i] = new Date( body.dateStrings[i] );
+    console.log("scheduleDays[",i,"]: ", scheduleDays[i]);
+  }
 
   var i = 2;
   while(i != 7){
@@ -80,9 +88,11 @@ function createSchedule(body){
 
       //Would also like a function that returns fname and lname when id is input.
     if(body.shopAMbools[i]){
-      getProcessor.getListOfEmployeeAvailableDaysAndTimes('evan', 'verma', function(err, results){
-      	console.log("sql query success");
+      getProcessor.getEmployeesWithShiftTypes(
+        scheduleDays[i],body.shopAMtimes[i], body.shopPMtimes[i], 'S', function(err, results){
+          console.log("results for day 0: \n", results);
       });
+      console.log("did query for i ===", i);
     }
     if(body.shopPMbools[i]){
       //fill shopPMworkers[i]
