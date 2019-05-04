@@ -212,7 +212,7 @@ class getSQLProcessor {
       getSQLProcessor.prototype.getDayRTOEmployees(date, function (err, offEmployee) {
         var arrOfIndexesToRemove = [];
         var getEmployeeAvailableOnDay =
-          `SELECT fName, lName, employee_init.id, employee.gender, start_work_hour, end_work_hour
+          `SELECT fName, lName, employee_init.id, employee.gender, can_work_day, start_work_hour, end_work_hour
             FROM availability
               JOIN employee_init ON availability.id = employee_init.id
               JOIN roles ON availability.id= roles.id
@@ -242,6 +242,7 @@ class getSQLProcessor {
               results.splice(uniqueIndexes[i], 1);
             }
           }
+
           callback(err, results);
 
 

@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const util = require('util');
+const async = require('async');
+const fs = require('fs');
 const getSQLProcessor = require('./getSQLProcessor');
 const insertProcessor = require('./insertProcessor');
 
@@ -9,12 +12,7 @@ var getProcessor = new getSQLProcessor();
 var queryInsert = new insertProcessor();
 app.use( cors() );
 app.use( bodyParser.json() );
-/* EXAMPLE
-var date = new Date("Mon Jan 15 2019");
-getProcessor.getEmployeesWithShiftTypes(date,"12:00", "16:00", "C", function(err, res) {
-  console.log(res);
 
-});*/
 app.post('/',function(req, res, next){
     res.json({msg: 'This is CORS-enabled for all origins!'});
 
@@ -37,21 +35,41 @@ function createSchedule(body){
     console.log("scheduleDays[",i,"]: ", scheduleDays[i]);
   }
 
+
   var i = 2;
   while(i != 7){
 
-      //would like to have a function that returns ids of all employees
-      //who are available for shift. So input start time, end time, shift type, and
-      //return array of ids.
-
-      //Would also like a function that returns fname and lname when id is input.
     if(body.shopAMbools[i]){
       getProcessor.getEmployeesWithShiftTypes(
         scheduleDays[i],body.shopAMtimes[i], body.shopPMtimes[i], 'S', function(err, results){
-          console.log("results for day 0: \n", results);
+
+          //iterates through sql data and puts value into html table.
+          //PROBLEM: iterations run in parallel, so cannot check for who is
+          //         working same shift type on other days
+          async.map(results, function(obj, callback) {
+            var id;
+            var fName;
+            var lName;
+
+            id = obj.id;
+            fName = obj.fName;
+            lName = obj.lName;
+            can_work_day = obj.can_work_day;
+
+            callback(err, {id: id, fName: fName, lName: lName, can_work_day: can_work_day});
+
+          }, function(err, info){
+            console.log("info.length: ", info.length);
+            var randomIndex = Math.floor(Math.random() * info.length);
+            console.log("randomIndex: ", randomIndex);
+            console.log("shopAM worker: ", info[randomIndex]);
+
+          });
+
+
       });
-      console.log("did query for i ===", i);
     }
+
     if(body.shopPMbools[i]){
       //fill shopPMworkers[i]
     }
