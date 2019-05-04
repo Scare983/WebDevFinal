@@ -80,6 +80,13 @@ app.get('/admin-rto', function(req, res, next) {
         joined.push(joinedItem);
       }
       for (let k = 0; k < joined.length; k++) {
+        let dateStart = new Date(joined[k].reqOffStart);
+        let dateFormat = dateStart.getMonth() + '-' + dateStart.getDate() + '-' + dateStart.getFullYear();
+        joined[k].reqOffStart = dateFormat;
+
+        let dateEnd = new Date(joined[k].reqOffEnd);
+        let dateFormatEnd = dateEnd.getMonth() + '-' + dateEnd.getDate() + '-' + dateEnd.getFullYear();
+        joined[k].reqOffEnd = dateFormatEnd;
         console.log(joined[k]);
       }
       console.log('sending: ' + joined);
