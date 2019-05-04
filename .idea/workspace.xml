@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9f9ee720-15a0-4994-ad3b-f22e7ac6cfb8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/getSQLProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/getSQLProcessor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/insertProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/insertProcessor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -29,13 +28,41 @@
     <expand />
     <select />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/backend/insertProcessor.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-1731">
+                    <caret line="257" column="14" selection-start-line="257" selection-start-column="2" selection-end-line="257" selection-end-column="14" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/getSQLProcessor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-323">
-              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+            <state relative-caret-position="3961">
+              <caret line="233" column="27" selection-start-line="233" selection-start-column="27" selection-end-line="233" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1097">
+              <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -43,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="425">
+              <caret line="52" column="45" lean-forward="true" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="45" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -53,46 +80,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/insertProcessor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="55" column="82" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="82" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="107" column="11" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
+            <state relative-caret-position="501">
+              <caret line="123" column="21" lean-forward="true" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -114,6 +105,9 @@
       <find>getAllEmployeeInfo</find>
       <find>getAllEmployeeInfoExceptRoles</find>
       <find>map</find>
+      <find>email</find>
+      <find>updateEm</find>
+      <find>Email</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,11 +131,11 @@
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/backend/routes/employeeInfo.js" />
         <option value="$PROJECT_DIR$/src/app/employee-info/employee-info.component.html" />
-        <option value="$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts" />
         <option value="$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.ts" />
         <option value="$PROJECT_DIR$/backend/getSQLProcessor.js" />
-        <option value="$PROJECT_DIR$/backend/insertProcessor.js" />
         <option value="$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts" />
+        <option value="$PROJECT_DIR$/backend/insertProcessor.js" />
         <option value="$PROJECT_DIR$/backend/app.js" />
       </list>
     </option>
@@ -150,8 +144,8 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1867" />
-    <option name="y" value="-16" />
+    <option name="x" value="50" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="956" />
   </component>
@@ -240,7 +234,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
+  <component name="RunManager" selected="Node.js.app.js">
     <configuration name="E2E Tests" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -297,12 +291,12 @@
       <workItem from="1556814209323" duration="7187000" />
       <workItem from="1556844153645" duration="5192000" />
       <workItem from="1556851484014" duration="248000" />
-      <workItem from="1556987372720" duration="3048000" />
+      <workItem from="1556987372720" duration="8674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91868000" />
+    <option name="totallyTimeSpent" value="97494000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -314,10 +308,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918962" visible="true" weight="0.26279318" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918962" visible="true" weight="0.26279318" />
       <window_info id="Structure" order="1" sideWeight="0.5008104" side_tool="true" weight="0.26012793" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -326,7 +320,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.25785482" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.25785482" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -398,11 +392,6 @@
           <url>file://$PROJECT_DIR$/backend/getSQLProcessor.js</url>
           <line>40</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/backend/app.js</url>
-          <line>29</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -506,9 +495,6 @@
           <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.css">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -649,27 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="107" column="11" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="55" column="82" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/set_up_db.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -687,37 +652,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/insertProcessor.js">
+    <entry file="file://$PROJECT_DIR$/backend/schedule.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="331">
+          <caret line="53" column="18" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/schedule.csv">
+    <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/getSQLProcessor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+        <state relative-caret-position="3961">
+          <caret line="233" column="27" selection-start-line="233" selection-start-column="27" selection-end-line="233" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="425">
+          <caret line="52" column="45" lean-forward="true" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="45" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="123" column="21" lean-forward="true" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/insertProcessor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1731">
+          <caret line="257" column="14" selection-start-line="257" selection-start-column="2" selection-end-line="257" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="-1097">
+          <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
         </state>
       </provider>
     </entry>

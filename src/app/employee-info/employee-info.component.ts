@@ -31,6 +31,7 @@ const httpOptions = {
                   <th>Gender</th>
                   <th>UserName</th>
                   <th>Password</th>
+                  <th>pref#shifts</th>
                   <th></th>
                 </tr>
               </thead>
@@ -58,10 +59,13 @@ const httpOptions = {
                     <input type="text" [(ngModel)]="employee.password" [disabled]="!employee.isEditable">
                   </td>
                   <td>
+                    <input type="number" [(ngModel)]="employee.prefNumOfShifts" [disabled]="!employee.isEditable">
+                  </td>
+             
+                  <td>
                     <button (click)="employee.isEditable=!employee.isEditable" *ngIf="!employee.isEditable"> Edit</button>
                     <div>
                     <button *ngIf="employee.isEditable" (click)="employee.isEditable=!employee.isEditable" (click)="saveToDataBase(i)"  > Save </button>
-                      <span ng-messages="">this response should change:  Updated index {{i}}</span>
                     </div>
                   </td>
                 </tr>
@@ -85,15 +89,16 @@ const httpOptions = {
   `,
   styleUrls: ['../bootstrap.min.css', '../app.component.css']
 })
+
 export class EmployeeInfoComponent implements OnInit {
   arrayOfEmployees = []//[ {fName:'Kevin0', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained: [0, 1, 2], gender:"M", userName:"Kev", password:"123" },{fName:'Kevin1', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained:[0, 1, 2], gender:"M", userName:"Kev", password:"123"} ];
-  arrayOfEmployee =[] ;//=  {fName:, lName:, employeeType:, email:, roleTrained:, gender:, userName:, password:};
-
+   //=  {fName:, lName:, employeeType:, email:, roleTrained:, gender:, userName:, password:};
   array = [];
   private serverURL = 'http://localhost:3000/employee-info';
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
   ngOnInit() {
       fetch(this.serverURL).then(response => {
         return response.json();
@@ -106,13 +111,9 @@ export class EmployeeInfoComponent implements OnInit {
             this.array.push(newObj);
           }
         }*/
-          for(var i = 0; i <this.array[0].length;i++ ) {
+          for(var i = 0; i < this.array[0].length;i++ ) {
             this.arrayOfEmployees.push(this.array[0][i]);
           }
-          console.log(this.arrayOfEmployees);
-
-
-
 
       });
 
@@ -120,8 +121,13 @@ export class EmployeeInfoComponent implements OnInit {
   }
 
   saveToDataBase(i) {
+    // this is going to be inefficient because i cant seem to get a comparison array from Ngint, so if save is clicked,  we are going to update entire DB row.
+    let valsJSON = JSON.stringify(this.arrayOfEmployees[i]);
+    console.log(valsJSON);
+    let goToLocation = 'http://localhost:3000/employee-info/update-emp-info';
+    this.http.post(goToLocation, valsJSON, httpOptions)
+      .subscribe(msg => console.log(msg));
     //check database info of employee and if info is different, call the update functions.
    // if(this.arrayOfEmployees[i].employeeType != )
-
   }
 }
