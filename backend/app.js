@@ -7,7 +7,6 @@ const insertProcessor = require('./insertProcessor');
 var app = express();
 var getProcessor = new getSQLProcessor();
 var queryInsert = new insertProcessor();
-var i = getProcessor.getListOfEmployeeAvailableDaysAndTimes("evan", "verma");
 app.use( cors() );
 app.use( bodyParser.json() );
 /* EXAMPLE
@@ -16,21 +15,13 @@ getProcessor.getEmployeesWithShiftTypes(date,"12:00", "16:00", "C", function(err
   console.log(res);
 
 });*/
-/*app.post('/',function(req, res, next){
+app.post('/',function(req, res, next){
     res.json({msg: 'This is CORS-enabled for all origins!'});
     console.log("body: ", req.body.shopAMbools[0]);
-
     createSchedule(req.body);
-  next();
-});*/
+});
 
 app.get('/', function(req, res, next) {
- /*getProcessor.getAllEmployeeInfo(function (err, results) {
-    var newRes = JSON.stringify(results); //makes object into JSON string
-    res.json(newRes);
-    res.end();
-   console.log(newRes);
-  }); */
   getProcessor.getAllEmployeeInfoExceptRoles(function(err, results) {
     if (err) {
       next(err);
@@ -42,21 +33,6 @@ app.get('/', function(req, res, next) {
         next(err);
         return;
       }
-      console.log('rolesList' + rolesList);
-      // OUTPUT FORMAT:
-      /*[
-          fName: 'patrick',
-          lName: 'unknown',
-          employeeType: 'employee',
-          email: 'Patrick@gmail.com',
-          gender: 'M',
-          userName: 'changemeUGA21',
-          password: '123567',
-          prefWeekends: 0,
-          prefNumOfShifts: 2,
-          roleTrained: [ 'S', 'R', 'RR', 'C' ] 
-        ]
-        */
       let joined = [];
       for (let i = 0; i < results.length; i++) {
         let joinedItem = {
@@ -69,42 +45,18 @@ app.get('/', function(req, res, next) {
             joinedItem.roleTrained.push(rolesList[j].roleTrained);
           }
         }
-        
+
         joined.push(joinedItem);
       }
       for (let k = 0; k < joined.length; k++) {
         console.log(joined[k]);
       }
       console.log('sending: ' + joined);
-      res.send(joined);
+      var valsJSON = JSON.stringify(joined);
+      res.json(joined);
     });
   });
 });
-  /*results.forEach(function(result){
-    let arr = [];
-    getProcessor.getEmployeeRolesTrainedIn(result.fName,result.lName, function (err1, res) {
-      if(typeof(res) == undefined ||typeof(res) == null ) {
-
-      }
-      else {
-        res.forEach(function(rolesWithId) {
-          arr.push(rolesWithId.roleTrained);
-          console.log(rolesWithId.roleTrained);
-        });
-        for(let z =0; z < results.length; z++) {
-          if(typeof(res[0]) == undefined || typeof(res[0]) == null ) break;
-          try {
-            if (result.id == res[0].id) {
-              otherRes[z].roleTrained = arr;
-              break;
-            }
-          }catch(er) {}
-        }
-
-      }
-    }, conn);
-  }); */
-//});
 
 
 app.use(function(err, req, res, next) {
