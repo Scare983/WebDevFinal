@@ -1,4 +1,4 @@
-Aconst express = require('express');
+const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const util = require('util');
@@ -12,10 +12,6 @@ var queryInsert = new insertProcessor();
 app.use( cors() );
 app.use( bodyParser.json() );
 
-//});
-var date = new Date("2015-5-10");
-
-var dat1 = new Date("2015-10-10");
 /*queryInsert.requestedDayOff("evan", "verma", "2015-5-10", "2015-10-10", " a", function(err, res) {
   if(err) {
   }
@@ -98,14 +94,31 @@ function createSchedule(body){
   console.log("body: ", body);
 
   var scheduleDays = new Array(7);
+  var shopAMworkers = [];
 
-  //fix data in dates array
+  //  Fixes data in dates array
   for (var i=0;i<7;i++){
     scheduleDays[i] = new Date( body.dateStrings[i] );
     console.log("scheduleDays[",i,"]: ", scheduleDays[i]);
   }
 
+  //  Writes template to csv file
+  var fileName = (scheduleDays[0].getMonth() + 1).toString().concat("-",
+                  (scheduleDays[0].getDate()).toString().concat("-"),
+                  scheduleDays[0].getFullYear().toString());
+  var shopFileName = `shop_schedule_${fileName}.csv`;
 
+  console.log("shopFileName: ", shopFileName);
+  shopFD = fs.openSync(shopFileName,'w+');
+
+  fs.readFile('shop_schedule_template.txt', function(err, data){
+    fs.write(shopFD,data,0,function(err){});
+  });
+
+
+  //  Iterates through all boolean values from form
+  //  and writes employee name to csv file one shift
+  //  at a time
   var i = 2;
   while(i != 7){
 
@@ -116,6 +129,8 @@ function createSchedule(body){
           //iterates through sql data and puts value into html table.
           //PROBLEM: iterations run in parallel, so cannot check for who is
           //         working same shift type on other days
+
+          //Need to not use this async function and use a regular for loop instead
           async.map(results, function(obj, callback) {
             var id;
             var fName;
@@ -126,18 +141,58 @@ function createSchedule(body){
             lName = obj.lName;
             can_work_day = obj.can_work_day;
 
-            callback(err, {id: id, fName: fName, lName: lName, can_work_day: can_work_day});
+            callback(err, {id: id,
+                          fName: fName,
+                          lName: lName,
+                          can_work_day: can_work_day
+                          });
 
           }, function(err, info){
-            console.log("info.length: ", info.length);
             var randomIndex = Math.floor(Math.random() * info.length);
-            console.log("randomIndex: ", randomIndex);
-            console.log("shopAM worker: ", info[randomIndex]);
+            shopAMworkers.push(info);
+            var shopAMworker = info[randomIndex];
+            shopAMworker.fName = shopAMworker.fName.charAt(0).toString().toUpperCase().concat(
+                  shopAMworker.fName.substring(1,shopAMworker.fName.length));
+            shopAMworker.lName = shopAMworker.lName.charAt(0).toString().toUpperCase().concat(
+                  shopAMworker.lName.substring(1,shopAMworker.lName.length));
+            console.log("shopAMworker: ", shopAMworker);
 
           });
 
+//==================== NOT WORKING ==================================================//
 
-      });
+            console.log("shopAMworkers.length: ", shopAMworkers.length);
+
+            for(var i=0;i<shopAMworkers.length;i++){
+          console.log("here");
+          console.log("shopAMworker[",i,"].fName: ", shopAMworkers[i].fName);
+
+          fs.readFile(shopFileName,'utf8',function(err, data){
+            var searchedName = shopAMworkers[i].fName.concat(' ', shopAMworkers[i].lName);
+            var pos = data.indexOf( searchedName );
+            console.log("pos: ", pos);
+
+            for (var i=0;i < (shopAMworkers[i].can_work_day+2);i++)
+              pos = data.indexOf(',',pos) + 1;
+
+            var shiftInfoString =
+              ` ${body.shopAMtimes[shopAMworkers[i].can_work_day]}-${body.shopPMtimes[shopAMworkers[i].can_work_day]}, `;
+
+            fs.write(shopFD,shiftInfoString,pos,function(err){});
+
+          });
+
+          }
+
+//=========================NOT WORKING ==============================================//
+
+
+
+
+        });
+
+      }
+
     }
 
     if(body.shopPMbools[i]){
@@ -181,7 +236,6 @@ function createSchedule(body){
             else if(i === 5) i = 6;
               else if(i === 6) i = 0;
                 else if(i === 0) i = 7;
-  }
 
 
 }

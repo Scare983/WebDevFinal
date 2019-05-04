@@ -5,8 +5,8 @@ class getSQLProcessor {
     this.conn = mysql.createPool({
         host: "localhost",
         user: "root",
-        password: "root",
-        database: "dawgs@thetee",
+        password: "Darshan2!",
+        database: "dawgs_the_tee",
         connectionLimit : 1000
       }
     );
@@ -266,4 +266,3 @@ class getSQLProcessor {
   }
 }
 module.exports = getSQLProcessor;
-B
