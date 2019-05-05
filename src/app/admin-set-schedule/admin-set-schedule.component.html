@@ -1,8 +1,39 @@
 
 <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+    <div style="width: 100%; padding: 20px; margin: 0;">
+        <p *ngIf="weather.length == 0">Searching...</p>
+        <div *ngIf="weather.length > 0">
+            <table style="width: 100%; text-align: center">
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td *ngFor="let forecast of weather">
+                            <img [src]="forecast.iconLink" />
+                            <p>{{ forecast.highTemperature | farenheiht }}/{{ forecast.lowTemperature | farenheiht }}</p>
+                            <p>{{forecast.precipitationProbability}}% of rain</p>
+                            <p>{{ forecast.utcTime | moment}}</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+      </div>
+      <div class="col-2"></div>
+
+</div>
+
+<div class="row">
+
+    
   <div class="col-1"></div>
 
+
   <div class="col-10">
+
+
 
     Start date for new schedule: <input [(ngModel)]="this.vals.dateStrings[0]" type="date" class="form-control"
                                   name="schedule-start-date" size="12" (change)="string2Date();">
@@ -459,3 +490,8 @@
   <div class="col-1"></div>
 
 </div>
+
+
+
+
+

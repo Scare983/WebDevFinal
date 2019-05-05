@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule,HttpClientJsonpModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,8 @@ import { AdminViewScheduleComponent } from './admin-view-schedule/admin-view-sch
 import { EmployeeInfoComponent } from './employee-info/employee-info.component';
 import {AdminRtoComponent} from './admin-rto-page/admin-rto.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { FarenheihtPipe } from './farenheiht.pipe';
+import { MomentPipe } from './moment.pipe';
 
 @NgModule({
   declarations: [
@@ -23,14 +25,17 @@ import {MatRadioModule} from '@angular/material/radio';
     RequestOffPageComponent,
     AdminViewScheduleComponent,
     EmployeeInfoComponent,
-    AdminRtoComponent
+    AdminRtoComponent,
+    FarenheihtPipe,
+    MomentPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientJsonpModule
   ],
   exports: [MatRadioModule],
   providers: [],
