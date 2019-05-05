@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/font-awesome/css/font-awesome.css";
+.saveID {
+  vertical-align: top;
+  color: #0100ff;
+  text-shadow: 1px 1px 1px #3e00bc;
+}
+.deleteId {
+  vertical-align: top;
+  color: #ff0015;
+  text-shadow: 1px 1px 1px #02002d;
+
+}
+.butSize {
+  padding-right:3px;
+  margin-right: 2px;
+  padding: 1px 1px;
+  text-align: center;
+  display: inline;
+}
+.font-small {
+  font-size: 1rem;
+  display:inline-block;
+}

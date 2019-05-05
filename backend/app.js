@@ -23,6 +23,8 @@ app.post('/admin-set-schedule',function(req, res, next){
     createSchedule(req.body);
 });
 
+
+
 app.get('/employee-info', function(req, res, next) {
   getProcessor.getAllEmployeeInfoExceptRoles(function(err, results) {
     if (err) {
@@ -60,6 +62,55 @@ app.get('/employee-info', function(req, res, next) {
   });
 });
 
+app.post('/employee-info/update-emp-info', function(req, res, next) {
+  res.json({msg: req.body});
+
+  queryInsert.updateEmployeePrefShifts(req.body.fName, req.body.lName, req.body.prefNumOfShifts, function(err, results ) {
+    if (err) {
+      console.log("hre");
+      next(err);
+      return;
+    }
+  });
+  queryInsert.updateEmail(req.body.fName, req.body.lName, req.body.email, function(err, results ) {
+    if (err) {
+      console.log("hre");
+      next(err);
+      return;
+    }
+  });
+  queryInsert.updateUserName(req.body.fName, req.body.lName, req.body.userName, function(err, results ) {
+    if (err) {
+      console.log("hre");
+      next(err);
+      return;
+    }
+  });
+  queryInsert.updateEmployeeType(req.body.fName, req.body.lName, req.body.employeeType, function(err, results ) {
+    if (err) {
+      console.log("hre");
+      next(err);
+      return;
+    }
+  });
+  queryInsert.updatePassword(req.body.fName, req.body.lName, req.body.password, function(err, results ) {
+    if (err) {
+      console.log("hre");
+      next(err);
+      return;
+    }
+  });
+});
+app.post('/employee-info/delete-emp-info',function(req, res, next){
+  res.json({msg: req.body});
+  queryInsert.deleteUser(req.body.fName, req.body.lName,  function(err, results ) {
+    if (err) {
+      console.log("hre");
+      next(err);
+      return;
+    }
+  });
+});
 app.get('/admin-rto', function(req, res, next) {
   getProcessor.getListOfEmployeeRTO(function(err, results) {
     if (err) {
