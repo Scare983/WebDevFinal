@@ -101,7 +101,6 @@ function createSchedule(body){
   console.log("body: ", body);
 
   var scheduleDays = new Array(7);
-  var shopAMworkers = [];
 
   //  Fixes data in dates array
   for (var i=0;i<7;i++){
@@ -126,8 +125,11 @@ function createSchedule(body){
   //  Iterates through all boolean values from form
   //  and writes employee name to csv file one shift
   //  at a time
-  var i = 2;
-  while(i != 7){
+//  var i = 2;
+  var shopAMworkers = [];
+  for(var i=0;i<7;i++){
+
+    console.log("loop");
 
     if(body.shopAMbools[i]){
       getProcessor.getEmployeesWithShiftTypes(
@@ -171,7 +173,6 @@ function createSchedule(body){
           console.log("shopAMworkers.length: ", shopAMworkers.length);
 
           for(var i=0;i<shopAMworkers.length;i++){
-              console.log("here");
               console.log("shopAMworker[",i,"].fName: ", shopAMworkers[i].fName);
 
               fs.readFile(shopFileName,'utf8',function(err, data){
@@ -236,6 +237,7 @@ function createSchedule(body){
       //fill tcPMworkers[i]
     }
 
+/*
     if(i === 2) i = 4;
       else if(i === 4) i = 1;
         else if(i === 1) i = 3;
@@ -244,5 +246,5 @@ function createSchedule(body){
               else if(i === 6) i = 0;
                 else if(i === 0) i = 7;
 
-
+*/
 }
