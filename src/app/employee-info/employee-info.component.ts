@@ -76,24 +76,7 @@ const httpOptions = {
               </tbody>
             </table>
 
-      <form #companyForm="ngForm" (ngSubmit)="submitCompany(companyForm.form);">
-        <button class="btn btn-primary" [disabled]="!companyForm.valid">Submit</button>
-        <input type="text"
-               class="form-control"
-               name="company-name"
-               ngModel
-               #nameField="ngModel"
-               minlength="3"
-        >  <div class="alert alert-danger"
     
-        <div class="alert alert-danger"
-             *ngIf="nameField.errors.minlength">
-          The company name is required
-        </div>
-    
-    
-  
-      </form>
       
       </div>
       
