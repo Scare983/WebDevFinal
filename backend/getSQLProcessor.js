@@ -4,8 +4,8 @@ class getSQLProcessor {
     this.conn = mysql.createPool({
         host: "localhost",
         user: "root",
-        password: "Darshan2!",
-        database: "dawgs_the_tee",
+        password: "root",
+        database: "dawgs@thetee",
         connectionLimit : 1000
       }
     );

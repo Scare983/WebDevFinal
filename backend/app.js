@@ -1,11 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const util = require('util');
-const async = require('async');
-const fs = require('fs');
 const getSQLProcessor = require('./getSQLProcessor');
 const insertProcessor = require('./insertProcessor');
+const Scheduler = require('./Scheduler.js');
 var app = express();
 var getProcessor = new getSQLProcessor();
 var queryInsert = new insertProcessor();
@@ -18,9 +16,30 @@ app.use( bodyParser.json() );
   if(res) console.log("yay");
 });*/
 app.post('/admin-set-schedule',function(req, res, next){
-    res.json({msg: 'This is CORS-enabled for all origins!'});
-    console.log("body: ", req.body.shopAMbools[0]);
-    createSchedule(req.body);
+
+ // res.json({msg: 'This is CORS-enabled for all origins!'});
+  var scheduler = new Scheduler(req.body);
+  scheduler.writeShopTemplate();
+
+  for(var i=0;i<7;i++){
+    if(req.body.shopAMbools[i]) scheduler.fillFileWithShopShift(
+      scheduler.scheduleDays[i],req.body.shopAMtimes[i],req.body.shopPMtimes[i],'S',scheduler);
+
+    if(req.body.shopPMbools[i]) scheduler.fillFileWithShopShift(
+      scheduler.scheduleDays[i],req.body.shopPMtimes[i],'21:00','S',scheduler);
+
+    if(req.body.starterAMbools[i]) scheduler.fillFileWithShopShift(
+      scheduler.scheduleDays[i],req.body.starterAMtimes[i],req.body.starterPMtimes[2],'ST',scheduler);
+
+    if(req.body.starterPMbools[i]) scheduler.fillFileWithShopShift(
+      scheduler.scheduleDays[i],req.body.starterPMtimes[i],'18:00','ST',scheduler);
+  }
+
+  /*
+      fs.readFile(scheduler.shopFileName,'utf8',function(err,data){
+          res.render('/admin-view-schedule',
+      });
+  */
 });
 
 
@@ -145,157 +164,4 @@ app.use(function(err, req, res, next) {
     message: 'something we wrong'
   });
 });
-
 app.listen(3000);
-
-function createSchedule(body){
-  console.log("body: ", body);
-
-  var scheduleDays = new Array(7);
-
-  //  Fixes data in dates array
-  for (var i=0;i<7;i++){
-    scheduleDays[i] = new Date( body.dateStrings[i] );
-    console.log("scheduleDays[",i,"]: ", scheduleDays[i]);
-  }
-
-  //  Writes template to csv file
-  var fileName = (scheduleDays[0].getMonth() + 1).toString().concat("-",
-                  (scheduleDays[0].getDate()).toString().concat("-"),
-                  scheduleDays[0].getFullYear().toString());
-  var shopFileName = `shop_schedule_${fileName}.csv`;
-
-  console.log("shopFileName: ", shopFileName);
-  shopFD = fs.openSync(shopFileName,'w+');
-
-  fs.readFile('shop_schedule_template.txt', function(err, data){
-    fs.write(shopFD,data,0,function(err){});
-  });
-
-
-  //  Iterates through all boolean values from form
-  //  and writes employee name to csv file one shift
-  //  at a time
-//  var i = 2;
-  var shopAMworkers = [];
-  for(var i=0;i<7;i++){
-
-    console.log("loop");
-
-    if(body.shopAMbools[i]){
-      getProcessor.getEmployeesWithShiftTypes(
-        scheduleDays[i],body.shopAMtimes[i], body.shopPMtimes[i], 'S', function(err, results){
-
-          //iterates through sql data and puts value into html table.
-          //PROBLEM: iterations run in parallel, so cannot check for who is
-          //         working same shift type on other days
-
-          //Need to not use this async function and use a regular for loop instead
-          async.map(results, function(obj, callback) {
-            var id;
-            var fName;
-            var lName;
-
-            id = obj.id;
-            fName = obj.fName;
-            lName = obj.lName;
-            can_work_day = obj.can_work_day;
-
-            callback(err, {id: id,
-                          fName: fName,
-                          lName: lName,
-                          can_work_day: can_work_day
-                          });
-
-          }, function(err, info){
-            var randomIndex = Math.floor(Math.random() * info.length);
-            shopAMworkers.push(info);
-            var shopAMworker = info[randomIndex];
-            shopAMworker.fName = shopAMworker.fName.charAt(0).toString().toUpperCase().concat(
-                  shopAMworker.fName.substring(1,shopAMworker.fName.length));
-            shopAMworker.lName = shopAMworker.lName.charAt(0).toString().toUpperCase().concat(
-                  shopAMworker.lName.substring(1,shopAMworker.lName.length));
-            console.log("shopAMworker: ", shopAMworker);
-
-          });
-
-//==================== NOT WORKING ==================================================//
-
-          console.log("shopAMworkers.length: ", shopAMworkers.length);
-
-          for(var i=0;i<shopAMworkers.length;i++){
-              console.log("shopAMworker[",i,"].fName: ", shopAMworkers[i].fName);
-
-              fs.readFile(shopFileName,'utf8',function(err, data){
-		  var searchedName = shopAMworkers[i].fName.concat(' ', shopAMworkers[i].lName);
-		  var pos = data.indexOf( searchedName );
-		  console.log("pos: ", pos);
-
-		  for (var i=0;i < (shopAMworkers[i].can_work_day+2);i++)
-		      pos = data.indexOf(',',pos) + 1;
-
-		  var shiftInfoString =
-		      ` ${body.shopAMtimes[shopAMworkers[i].can_work_day]}-${body.shopPMtimes[shopAMworkers[i].can_work_day]}, `;
-
-		  fs.write(shopFD,shiftInfoString,pos,function(err){});
-
-              });
-
-          }
-
-//=========================NOT WORKING ==============================================//
-
-
-
-
-        });
-
-      }
-
-    }
-
-    if(body.shopPMbools[i]){
-      //fill shopPMworkers[i]
-    }
-    if(body.rrAMbools[i]){
-      //fill rrAMworkers[i]
-    }
-    if(body.rrPMbools[i]){
-      //fill rrPMworkers[i]
-    }
-    if(body.cartsAMbools[i]){
-      //fill cartsAMworkers[i]
-    }
-    if(body.cartsPMbools[i]){
-      //fill cartsPMworkers[i]
-    }
-    if(body.rangeAMbools[i]){
-      //fill rangeAMworkers[i]
-    }
-    if(body.rangePMbools[i]){
-      //fill rangePMworkers[i]
-    }
-    if(body.starterAMbools[i]){
-      //fill starterAMworkers[i]
-    }
-    if(body.starterPMbools[i]){
-      //fill starterPMworkers[i]
-    }
-    if(body.tcAMbools[i]){
-      //fill tcAMworkers[i]
-    }
-    if(body.tcPMbools[i]){
-      //fill tcPMworkers[i]
-    }
-
-/*
-    if(i === 2) i = 4;
-      else if(i === 4) i = 1;
-        else if(i === 1) i = 3;
-          else if(i === 3) i = 5;
-            else if(i === 5) i = 6;
-              else if(i === 6) i = 0;
-                else if(i === 0) i = 7;
-
-*/
-}

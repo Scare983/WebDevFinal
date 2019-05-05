@@ -29,7 +29,7 @@ class Scheduler{
 
   		this.shopFD = this.fs.openSync(this.shopFileName,'w+');
 
-  		var templateData = this.fs.readFileSync('shop_schedule_template.txt');
+  		var templateData = this.fs.readFileSync(__dirname + '/shop_schedule_template.txt');
   		this.fs.writeSync(this.shopFD,templateData,0);
 	}
 
