@@ -19,13 +19,34 @@ const httpOptions = {
 export class AdminSetScheduleComponent implements OnInit {
 
   private serverURL = 'http://127.0.0.1:3000/';
+  private appID: string;
+  private appCode: string;
+  public weather: any;
 
   vals: ScheduleFormValues;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.appID = 'M8eqbw9k0GtE64wKK8Pk';
+    this.appCode = '07gzPxQWuIT7eF_wlfFAtw';
+    this.weather = [];
+  
+  }
 
   ngOnInit() {
+    this.getWeather();
     this.vals = new ScheduleFormValues();
+  }
+ 
+  public getWeather(){
+
+    this.http.jsonp("https://weather.api.here.com/weather/1.0/report.json?app_id=M8eqbw9k0GtE64wKK8Pk&app_code=07gzPxQWuIT7eF_wlfFAtw&product=forecast_7days_simple&latitude=33.95&longitude=-83.37", "jsonpCallback")
+    .pipe(map(result => (<any>result).dailyForecasts.forecastLocation))
+    .subscribe(result => {
+        this.weather = result.forecast;
+    }, error => {
+        console.error(error);
+    });
+
   }
 
   string2Date(): void{
@@ -59,5 +80,5 @@ export class AdminSetScheduleComponent implements OnInit {
         .subscribe(msg => console.log(msg));
     */
   }
-
+  
 }
