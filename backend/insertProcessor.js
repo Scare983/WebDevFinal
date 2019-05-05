@@ -78,8 +78,6 @@ class insertProcessor {
     });
   }
 
-
-
   updatePassword(fName, lName, newPass, callback) {
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
     this.conn.getConnection(function(err, conn) {
@@ -97,7 +95,22 @@ class insertProcessor {
     });
   }
 
-
+  updateEmail(fName, lName, newEmail, callback) {
+    var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;
+    this.conn.getConnection(function(err, conn) {
+      if (err)   callback(err, null);
+      conn.query(sqlUserID, function (err, result) {
+        if (err) callback(err, null);
+        if (result.length > 0) {
+          var sqlEmployeeUpdate = `UPDATE employee SET email = '${newEmail}' WHERE id = '${result[0].id}'`;
+          conn.query(sqlEmployeeUpdate, function (err) {
+            console.log("Updated email " + lName + " to " + newEmail);
+            callback(err, result);
+          });
+        }
+      });
+    });
+  }
 
   updateUserName(fName, lName, newUserName, callback) {
     var sqlUserID = `SELECT id FROM employee_init WHERE lName = '${lName}' AND fName = '${fName}'`;

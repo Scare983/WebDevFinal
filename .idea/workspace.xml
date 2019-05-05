@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f9ee720-15a0-4994-ad3b-f22e7ac6cfb8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/getSQLProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/getSQLProcessor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/insertProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/insertProcessor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/employee-info/employee-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/employee-info/employee-info.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="9f9ee720-15a0-4994-ad3b-f22e7ac6cfb8" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,19 +27,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/getSQLProcessor.js">
+        <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.spec.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="77" column="53" selection-start-line="77" selection-start-column="53" selection-end-line="77" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="61" column="8" lean-forward="true" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+            <state>
+              <folding>
+                <element signature="e#0#73#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,10 +40,45 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="2139">
+              <caret line="134" column="11" selection-start-line="134" selection-start-column="11" selection-end-line="134" selection-end-column="11" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/Scheduler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="31" column="55" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop_schedule_5-4-2019.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="92" selection-start-line="10" selection-start-column="92" selection-end-line="10" selection-end-column="92" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/moment.pipe.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <folding>
+                <element signature="e#0#52#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/moment.pipe.spec.ts">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -71,19 +91,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/insertProcessor.js">
+        <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="205" column="64" lean-forward="true" selection-start-line="205" selection-start-column="64" selection-end-line="205" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/node_modules/mysql/lib/protocol/Parser.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="436" selection-start-line="436" selection-end-line="436" />
+            <state relative-caret-position="323">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
         </entry>
@@ -91,25 +102,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="97" column="36" selection-start-line="97" selection-start-column="36" selection-end-line="97" selection-end-column="36" />
+            <state relative-caret-position="816">
+              <caret line="105" selection-start-line="105" selection-end-line="105" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/e2e/tsconfig.e2e.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/e2e/protractor.conf.js">
+        <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="33" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="33" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="-799">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
         </entry>
@@ -121,6 +127,7 @@
       <list>
         <option value="TypeScript File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -131,6 +138,17 @@
       <find>getAllEmployeeInfo</find>
       <find>getAllEmployeeInfoExceptRoles</find>
       <find>map</find>
+      <find>email</find>
+      <find>updateEm</find>
+      <find>Email</find>
+      <find>employeeTy</find>
+      <find>shopAMbool_0</find>
+      <find>styles</find>
+      <find>fas</find>
+      <find>fa-person-booth</find>
+      <find>fa-sm</find>
+      <find>getEmployeesWithShiftTypes</find>
+      <find>eva</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,14 +170,21 @@
         <option value="$PROJECT_DIR$/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/src/app/app-routing.module.ts" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.ts" />
         <option value="$PROJECT_DIR$/backend/routes/employeeInfo.js" />
-        <option value="$PROJECT_DIR$/src/app/employee-info/employee-info.component.html" />
-        <option value="$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts" />
-        <option value="$PROJECT_DIR$/backend/getSQLProcessor.js" />
-        <option value="$PROJECT_DIR$/backend/insertProcessor.js" />
-        <option value="$PROJECT_DIR$/backend/app.js" />
         <option value="$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.ts" />
+        <option value="$PROJECT_DIR$/backend/insertProcessor.js" />
+        <option value="$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.css" />
+        <option value="$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/app.component.css" />
+        <option value="$PROJECT_DIR$/src/app/employee-info/employee-info.css" />
+        <option value="$PROJECT_DIR$/src/app/employee-info/employee-info.component.html" />
+        <option value="$PROJECT_DIR$/src/styles.css" />
+        <option value="$PROJECT_DIR$/backend/getSQLProcessor.js" />
+        <option value="$PROJECT_DIR$/backend/app.js" />
+        <option value="$PROJECT_DIR$/backend/Scheduler.js" />
+        <option value="$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.html" />
+        <option value="$PROJECT_DIR$/src/app/moment.pipe.ts" />
       </list>
     </option>
   </component>
@@ -167,8 +192,8 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1983" />
-    <option name="y" value="-13" />
+    <option name="x" value="65" />
+    <option name="y" value="-9" />
     <option name="width" value="1936" />
     <option name="height" value="956" />
   </component>
@@ -177,7 +202,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,12 +212,7 @@
             <path>
               <item name="final_project_evKev" type="b2602c69:ProjectViewProjectNode" />
               <item name="final_project_evKev" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="final_project_evKev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="final_project_evKev" type="462c0819:PsiDirectoryNode" />
-              <item name="e2e" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="final_project_evKev" type="b2602c69:ProjectViewProjectNode" />
@@ -205,32 +224,12 @@
               <item name="final_project_evKev" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="final_project_evKev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="final_project_evKev" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="admin-rto-page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="final_project_evKev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="final_project_evKev" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="admin-set-schedule" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="final_project_evKev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="final_project_evKev" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="employee-info" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -239,8 +238,9 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556952205937" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557089508735" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/app_v3.js" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="D:\4300WebDev\evan_dawgs_at_tee\node_modules\tslint" />
@@ -280,6 +280,9 @@
     <configuration name="app.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="backend/app.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <configuration name="app_v3.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="backend/app_v3.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <configuration name="insertProcessor.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="backend/insertProcessor.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -295,6 +298,7 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Angular Application" />
+      <item itemvalue="Node.js.app_v3.js" />
       <item itemvalue="Node.js.app.js" />
       <item itemvalue="Node.js.insertProcessor.js" />
       <item itemvalue="npm.Angular CLI Server" />
@@ -321,11 +325,14 @@
       <workItem from="1556814209323" duration="7187000" />
       <workItem from="1556844153645" duration="5192000" />
       <workItem from="1556851484014" duration="248000" />
+      <workItem from="1556987372720" duration="9462000" />
+      <workItem from="1557026207032" duration="15062000" />
+      <workItem from="1557085216232" duration="3464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88009000" />
+    <option name="totallyTimeSpent" value="118584000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -337,10 +344,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918962" visible="true" weight="0.26012793" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918962" visible="true" weight="0.26812366" />
       <window_info id="Structure" order="1" sideWeight="0.5008104" side_tool="true" weight="0.26012793" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -348,8 +354,8 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.25785482" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.2881907" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -359,7 +365,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.33152762" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32936078" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32936078" />
       <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -373,7 +379,7 @@
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918962" visible="true" weight="0.26012793" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918962" visible="true" weight="0.26545843" />
       <window_info id="Structure" order="1" sideWeight="0.5008104" side_tool="true" weight="0.26012793" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -382,7 +388,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.33152762" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.2881907" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -392,7 +398,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.33152762" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32936078" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32936078" />
       <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -414,226 +420,34 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/backend/getSQLProcessor.js</url>
-          <line>137</line>
+          <line>136</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/backend/getSQLProcessor.js</url>
-          <line>41</line>
-          <properties lambdaOrdinal="-1" />
+          <line>40</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/backend/app.js</url>
-          <line>31</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/schedule-page/schedule-page.component.spec.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/schedule-page/schedule-page.component.html" />
-    <entry file="file://$PROJECT_DIR$/src/app/schedule-page/schedule-page.component.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule.service.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.html">
+    <entry file="file://$PROJECT_DIR$/angular.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/login-page/login-page.component.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/nodeJsServer.js" />
-    <entry file="file://$PROJECT_DIR$/src/app/heading/headings.component.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/heading/heading.component.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/font-awesome/css/font-awesome.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="192">
+          <caret line="960" column="6" selection-start-line="960" selection-start-column="1" selection-end-line="960" selection-end-column="6" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/heading/heading.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="340">
-            <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/browserslist">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/favicon.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/karma.conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/heading/#heading.component.js#">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/polyfills.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="50" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/heading/#heading.component.ts#">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/heading/heading.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="1008" column="14" selection-start-line="1008" selection-start-column="14" selection-end-line="1008" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/node_modules/express/lib/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3383">
-          <caret line="295" column="64" selection-start-line="295" selection-start-column="64" selection-end-line="295" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/routes/employeeInfo.js" />
-    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="56" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/ScheduleFormValues.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4e4b0593-0a1a-4efb-aef4-b43a46d8a33e/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-            <element signature="e#173#228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/set_up_db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="43" selection-start-column="30" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="41" lean-forward="true" selection-start-column="41" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/admin-view-schedule/admin-view-schedule.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/e2e/src/app.po.ts">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -649,24 +463,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/e2e/src/app.e2e-spec.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
+          <caret column="41" lean-forward="true" selection-start-column="41" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#173#228#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.css" />
+    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        <state relative-caret-position="476">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/heading/heading.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/ScheduleFormValues.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="23" column="87" selection-start-line="23" selection-start-column="87" selection-end-line="23" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app_v2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1326" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/set_up_db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="43" selection-start-column="30" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/getSQLProcessor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1637">
+          <caret line="243" column="21" selection-start-line="243" selection-start-column="14" selection-end-line="243" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/package.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -675,30 +576,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/e2e/protractor.conf.js">
+    <entry file="file://$PROJECT_DIR$/backend/insertProcessor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="33" />
+        <state relative-caret-position="459">
+          <caret line="66" column="20" selection-start-line="66" selection-start-column="2" selection-end-line="66" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/shop_schedule_5-12-2019.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/shop_schedule_5-5-2019.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/shop_schedule_template.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app_v3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2139">
+          <caret line="134" column="11" selection-start-line="134" selection-start-column="11" selection-end-line="134" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-8-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-18-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-4-2019.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="92" selection-start-line="10" selection-start-column="92" selection-end-line="10" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-15-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-30-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-25-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-24-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-23-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-10-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-9-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-11-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/backend/shop_schedule.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/Scheduler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="31" column="55" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/e2e/tsconfig.e2e.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/node_modules/mysql/lib/protocol/Parser.js">
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-7-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-26-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="436" selection-start-line="436" selection-end-line="436" />
+        <state relative-caret-position="-799">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/getSQLProcessor.js">
+    <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="77" column="53" selection-start-line="77" selection-start-column="53" selection-end-line="77" selection-end-column="53" />
+        <state>
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -709,31 +676,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="97" column="36" selection-start-line="97" selection-start-column="36" selection-end-line="97" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/insertProcessor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="205" column="64" lean-forward="true" selection-start-line="205" selection-start-column="64" selection-end-line="205" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="61" column="8" lean-forward="true" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+        <state relative-caret-position="323">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-17-2019.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/moment.pipe.spec.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/moment.pipe.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
