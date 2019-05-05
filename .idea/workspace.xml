@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f9ee720-15a0-4994-ad3b-f22e7ac6cfb8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/moment.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/moment.pipe.ts" afterDir="false" />
-    </list>
+    <list default="true" id="9f9ee720-15a0-4994-ad3b-f22e7ac6cfb8" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/shop_schedule_5-4-2019.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="92" lean-forward="true" selection-start-line="10" selection-start-column="92" selection-end-line="10" selection-end-column="92" />
+              <caret line="10" column="92" selection-start-line="10" selection-start-column="92" selection-end-line="10" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -69,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/moment.pipe.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+            <state relative-caret-position="221">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -214,6 +212,11 @@
             <path>
               <item name="final_project_evKev" type="b2602c69:ProjectViewProjectNode" />
               <item name="final_project_evKev" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="final_project_evKev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="final_project_evKev" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -329,7 +332,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118168000" />
+    <option name="totallyTimeSpent" value="118584000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -342,7 +345,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918962" visible="true" weight="0.26812366" />
       <window_info id="Structure" order="1" sideWeight="0.5008104" side_tool="true" weight="0.26012793" />
@@ -613,7 +615,7 @@
     <entry file="file://$PROJECT_DIR$/shop_schedule_5-4-2019.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="92" lean-forward="true" selection-start-line="10" selection-start-column="92" selection-end-line="10" selection-end-column="92" />
+          <caret line="10" column="92" selection-start-line="10" selection-start-column="92" selection-end-line="10" selection-end-column="92" />
         </state>
       </provider>
     </entry>
@@ -689,8 +691,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/moment.pipe.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>
