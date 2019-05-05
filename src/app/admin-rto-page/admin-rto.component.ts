@@ -39,7 +39,7 @@ import {Component, OnInit} from '@angular/core';
       </div>
      </div>
   <div *ngIf="arrayOfEmployeesRTO.length == 0" class="right_bar">
-    <h1>No One is looking for a day off!</h1>
+    <h1>No one is looking for a day off.</h1>
   </div>
   `,
   styleUrls: ['../bootstrap.min.css','../app.component.css']

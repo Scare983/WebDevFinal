@@ -1,5 +1,36 @@
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+    <div style="width: 100%; padding: 20px; margin: 0;">
+        <p *ngIf="weather.length == 0">Searching...</p>
+        <div *ngIf="weather.length > 0">
+            <table style="width: 100%; text-align: center">
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td *ngFor="let forecast of weather">
+                            <img [src]="forecast.iconLink" />
+                            <p>{{ forecast.highTemperature | farenheiht }}&deg;/{{ forecast.lowTemperature | farenheiht }}&deg;</p>
+                            <p>{{forecast.precipitationProbability}}% <i class="fas fa-tint"></i></p>
+                            <p>{{ forecast.utcTime | moment}}</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+      </div>
+      <div class="col-2"></div>
+
+</div>
+
 <div class="row">
 
+    
 
   <div class="col-1"></div>
 
@@ -463,3 +494,8 @@
   <div class="col-1"></div>
 
 </div>
+
+
+
+
+
