@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 
 <div class="row">
     <div class="col-1"></div>
@@ -11,8 +13,8 @@
                     <tr>
                         <td *ngFor="let forecast of weather">
                             <img [src]="forecast.iconLink" />
-                            <p>{{ forecast.highTemperature | farenheiht }}/{{ forecast.lowTemperature | farenheiht }}</p>
-                            <p>{{forecast.precipitationProbability}}% of rain</p>
+                            <p>{{ forecast.highTemperature | farenheiht }}&deg;/{{ forecast.lowTemperature | farenheiht }}&deg;</p>
+                            <p>{{forecast.precipitationProbability}}% <i class="fas fa-tint"></i></p>
                             <p>{{ forecast.utcTime | moment}}</p>
                         </td>
                     </tr>
