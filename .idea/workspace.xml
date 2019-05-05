@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f9ee720-15a0-4994-ad3b-f22e7ac6cfb8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shop_schedule_5-26-2019.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Scheduler.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Scheduler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/getSQLProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/getSQLProcessor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop_schedule_5-26-2019.csv" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -35,22 +30,84 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/Scheduler.js">
+        <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="476">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="892">
+              <caret line="59" column="30" lean-forward="true" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="816">
               <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
             </state>
           </provider>
         </entry>
@@ -115,10 +172,10 @@
         <option value="$PROJECT_DIR$/src/app/employee-info/employee-info.component.html" />
         <option value="$PROJECT_DIR$/src/styles.css" />
         <option value="$PROJECT_DIR$/backend/getSQLProcessor.js" />
-        <option value="$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.html" />
         <option value="$PROJECT_DIR$/backend/app.js" />
         <option value="$PROJECT_DIR$/backend/Scheduler.js" />
         <option value="$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.html" />
       </list>
     </option>
   </component>
@@ -164,6 +221,20 @@
               <item name="final_project_evKev" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-rto-page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="final_project_evKev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="final_project_evKev" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-set-schedule" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="final_project_evKev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="final_project_evKev" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="employee-info" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -179,7 +250,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557088697876" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557089508735" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/app_v3.js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -273,7 +344,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116808000" />
+    <option name="totallyTimeSpent" value="117245000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -374,16 +445,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/deep-equal/example/cmp.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/node_modules/mysql/lib/protocol/Parser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7412">
-          <caret line="436" selection-start-line="436" selection-end-line="436" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/e2e/tsconfig.e2e.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -397,23 +458,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/schedule.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="53" column="18" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/schedule.csv" />
     <entry file="file://$PROJECT_DIR$/angular.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -519,13 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -599,50 +637,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shop_schedule_5-8-2019.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop_schedule_5-18-2019.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop_schedule_5-4-2019.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop_schedule_5-15-2019.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop_schedule_5-30-2019.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop_schedule_5-25-2019.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop_schedule_5-24-2019.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop_schedule_5-23-2019.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop_schedule_5-10-2019.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop_schedule_5-9-2019.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop_schedule_5-11-2019.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-8-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-18-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-4-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-15-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-30-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-25-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-24-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-23-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-10-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-9-2019.csv" />
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-11-2019.csv" />
     <entry file="file://$PROJECT_DIR$/backend/shop_schedule.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop_schedule_5-26-2019.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -655,11 +664,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="816">
           <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-7-2019.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop_schedule_5-26-2019.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/admin-set-schedule/admin-set-schedule.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/employee-info/employee-info.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/admin-rto-page/admin-rto.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="892">
+          <caret line="59" column="30" lean-forward="true" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
         </state>
       </provider>
     </entry>
