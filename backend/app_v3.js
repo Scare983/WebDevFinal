@@ -111,65 +111,9 @@ app.post('/admin-set-schedule',function(req, res, next){
     }
 
 /*
-    if(req.body.shopAMbools[2]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[2],req.body.shopAMtimes[2],req.body.shopPMtimes[2],'S',scheduler);
-    if(req.body.shopAMbools[4]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[4],req.body.shopAMtimes[4],req.body.shopPMtimes[4],'S',scheduler);
-    if(req.body.shopAMbools[1]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[1],req.body.shopAMtimes[1],req.body.shopPMtimes[1],'S',scheduler);
-    if(req.body.shopAMbools[3]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[3],req.body.shopAMtimes[3],req.body.shopPMtimes[3],'S',scheduler);
-    if(req.body.shopAMbools[5]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[5],req.body.shopAMtimes[5],req.body.shopPMtimes[5],'S',scheduler);
-    if(req.body.shopAMbools[6]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[6],req.body.shopAMtimes[2],req.body.shopPMtimes[6],'S',scheduler);
-    if(req.body.shopAMbools[0]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[0],req.body.shopAMtimes[0],req.body.shopPMtimes[0],'S',scheduler);
-
-    if(req.body.shopPMbools[2]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[2],req.body.shopPMtimes[2],'21:00','S',scheduler);
-    if(req.body.shopPMbools[4]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[4],req.body.shopPMtimes[4],'21:00','S',scheduler);
-    if(req.body.shopPMbools[1]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[1],req.body.shopPMtimes[1],'21:00','S',scheduler);
-    if(req.body.shopPMbools[3]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[3],req.body.shopPMtimes[3],'21:00','S',scheduler);
-    if(req.body.shopPMbools[5]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[5],req.body.shopPMtimes[5],'21:00','S',scheduler);
-    if(req.body.shopPMbools[6]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[6],req.body.shopPMtimes[6],'21:00','S',scheduler);
-    if(req.body.shopPMbools[0]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[0],req.body.shopPMtimes[0],'21:00','S',scheduler);
-
-    if(req.body.starterAMbools[2]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[2],req.body.starterAMtimes[2],req.body.starterPMtimes[2],'ST',scheduler);
-    if(req.body.starterAMbools[4]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[4],req.body.starterAMtimes[4],req.body.starterPMtimes[4],'ST',scheduler);
-    if(req.body.starterAMbools[1]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[1],req.body.starterAMtimes[1],req.body.starterPMtimes[1],'ST',scheduler);
-    if(req.body.starterAMbools[3]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[3],req.body.starterAMtimes[3],req.body.starterPMtimes[3],'ST',scheduler);
-    if(req.body.starterAMbools[5]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[5],req.body.starterAMtimes[5],req.body.starterPMtimes[5],'ST',scheduler);
-    if(req.body.starterAMbools[6]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[6],req.body.starterAMtimes[6],req.body.starterPMtimes[6],'ST',scheduler);
-    if(req.body.starterAMbools[0]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[0],req.body.starterAMtimes[0],req.body.starterPMtimes[0],'ST',scheduler);
-
-    if(req.body.starterPMbools[2]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[2],req.body.starterPMtimes[2],'18:00','ST',scheduler);
-    if(req.body.starterPMbools[4]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[4],req.body.starterPMtimes[4],'18:00','ST',scheduler);
-    if(req.body.starterPMbools[1]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[1],req.body.starterPMtimes[1],'18:00','ST',scheduler);
-    if(req.body.starterPMbools[3]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[3],req.body.starterPMtimes[3],'18:00','ST',scheduler);
-    if(req.body.starterPMbools[5]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[5],req.body.starterPMtimes[5],'18:00','ST',scheduler);
-    if(req.body.starterPMbools[6]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[6],req.body.starterPMtimes[6],'18:00','ST',scheduler);
-    if(req.body.starterPMbools[0]) scheduler.fillFileWithShopShift(
-    	scheduler.scheduleDays[0],req.body.starterPMtimes[0],'18:00','ST',scheduler);
+	fs.readFile(scheduler.shopFileName,'utf8',function(err,data){
+		res.render('/admin-view-schedule',
+	});
 */
 });
 
