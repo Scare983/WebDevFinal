@@ -151,7 +151,7 @@ function createSchedule(body){
 		      			pos = data.indexOf(',',pos) + 1;
 
 		  			var shiftInfoString =
-		      			` ${body.shopAMtimes[results[randomIndex].can_work_day]}-${body.shopPMtimes[results[randomIndex].can_work_day]}, `;
+		      			` ${body.shopAMtimes[results[randomIndex].can_work_day]}-${body.shopPMtimes[results[randomIndex].can_work_day]}`;
 
 		  			fs.writeSync(shopFD,shiftInfoString,pos);
 				});
@@ -181,7 +181,7 @@ function createSchedule(body){
 		      			pos = data.indexOf(',',pos) + 1;
 
 		  			var shiftInfoString =
-		      			` ${body.shopAMtimes[results[randomIndex].can_work_day]}-${body.shopPMtimes[results[randomIndex].can_work_day]}, `;
+		      			` ${body.shopAMtimes[results[randomIndex].can_work_day]}-${body.shopPMtimes[results[randomIndex].can_work_day]}`;
 
 		  			fs.writeSync(shopFD,shiftInfoString,pos);
 				});
@@ -211,7 +211,7 @@ function createSchedule(body){
 		      			pos = data.indexOf(',',pos) + 1;
 
 		  			var shiftInfoString =
-		      			` ${body.shopAMtimes[results[randomIndex].can_work_day]}-${body.shopPMtimes[results[randomIndex].can_work_day]}, `;
+		      			` ${body.shopAMtimes[results[randomIndex].can_work_day]}-${body.shopPMtimes[results[randomIndex].can_work_day]}`;
 
 		  			fs.writeSync(shopFD,shiftInfoString,pos);
 				});
@@ -241,7 +241,7 @@ function createSchedule(body){
 		      			pos = data.indexOf(',',pos) + 1;
 
 		  			var shiftInfoString =
-		      			` ${body.shopAMtimes[results[randomIndex].can_work_day]}-${body.shopPMtimes[results[randomIndex].can_work_day]}, `;
+		      			` ${body.shopAMtimes[results[randomIndex].can_work_day]}-${body.shopPMtimes[results[randomIndex].can_work_day]}`;
 
 		  			fs.writeSync(shopFD,shiftInfoString,pos);
 				});
@@ -271,7 +271,7 @@ function createSchedule(body){
 		      			pos = data.indexOf(',',pos) + 1;
 
 		  			var shiftInfoString =
-		      			` ${body.shopAMtimes[results[randomIndex].can_work_day]}-${body.shopPMtimes[results[randomIndex].can_work_day]}, `;
+		      			` ${body.shopAMtimes[results[randomIndex].can_work_day]}-${body.shopPMtimes[results[randomIndex].can_work_day]}`;
 
 		  			fs.writeSync(shopFD,shiftInfoString,pos);
 				});
@@ -301,7 +301,7 @@ function createSchedule(body){
 		      			pos = data.indexOf(',',pos) + 1;
 
 		  			var shiftInfoString =
-		      			` ${body.shopAMtimes[results[randomIndex].can_work_day]}-${body.shopPMtimes[results[randomIndex].can_work_day]}\n `;
+		      			` ${body.shopAMtimes[results[randomIndex].can_work_day]}-${body.shopPMtimes[results[randomIndex].can_work_day]}`;
 
 		  			fs.writeSync(shopFD,shiftInfoString,pos);
 				});
@@ -331,7 +331,7 @@ function createSchedule(body){
 		      			pos = data.indexOf(',',pos) + 1;
 
 		  			var shiftInfoString =
-		      			` ${body.shopAMtimes[results[randomIndex].can_work_day]}-${body.shopPMtimes[results[randomIndex].can_work_day]}, `;
+		      			` ${body.shopAMtimes[results[randomIndex].can_work_day]}-${body.shopPMtimes[results[randomIndex].can_work_day]}`;
 
 		  			fs.writeSync(shopFD,shiftInfoString,pos);
 				});
