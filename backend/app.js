@@ -27,6 +27,8 @@ app.post('/admin-set-schedule',function(req, res, next){
     createSchedule(req.body);
 });
 
+
+
 app.get('/employee-info', function(req, res, next) {
   getProcessor.getAllEmployeeInfoExceptRoles(function(err, results) {
     if (err) {
@@ -96,6 +98,16 @@ app.post('/employee-info/update-emp-info', function(req, res, next) {
     }
   });
   queryInsert.updatePassword(req.body.fName, req.body.lName, req.body.password, function(err, results ) {
+    if (err) {
+      console.log("hre");
+      next(err);
+      return;
+    }
+  });
+});
+app.post('/employee-info/delete-emp-info',function(req, res, next){
+  res.json({msg: req.body});
+  queryInsert.deleteUser(req.body.fName, req.body.lName,  function(err, results ) {
     if (err) {
       console.log("hre");
       next(err);
