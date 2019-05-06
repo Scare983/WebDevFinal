@@ -31,7 +31,9 @@ const httpOptions = {
                   <th>UserName</th>
                   <th>Password</th>
                   <th>pref#shifts</th>
-                  <th><button type="button" class="btn btn-primary" (click)="newUser()">Add User </button></th>
+                  <nav>
+                  <th><a class="btn btn-primary" role="button" routerLink = "/add-user-modal" >Add User</a></th>
+                  </nav>
                 </tr>
               </thead>
               <tbody>
@@ -153,4 +155,5 @@ export class EmployeeInfoComponent implements OnInit {
     }
 
   }
+
 }

@@ -6,6 +6,8 @@ import { RequestOffPageComponent} from './request-off-page/request-off-page.comp
 import { AdminViewScheduleComponent } from './admin-view-schedule/admin-view-schedule.component';
 import { EmployeeInfoComponent} from './employee-info/employee-info.component';
 import {AdminRtoComponent} from './admin-rto-page/admin-rto.component';
+import { AddUserModalComponent} from './add-user-modal/add-user-modal.component'
+
 const routes: Routes = [
   {path: '', redirectTo: 'admin-view-schedule', pathMatch: "full" },
   {path: 'heading', component: HeadingComponent},
@@ -13,8 +15,8 @@ const routes: Routes = [
   {path: 'request-off-page', component: RequestOffPageComponent},
   {path: 'admin-view-schedule', component: AdminViewScheduleComponent},
   {path: 'employee-info', component: EmployeeInfoComponent},
-  {path: 'admin-rto-page', component: AdminRtoComponent}
-
+  {path: 'admin-rto-page', component: AdminRtoComponent},
+  {path: 'add-user-modal', component: AddUserModalComponent}
 ];
 
 @NgModule({
