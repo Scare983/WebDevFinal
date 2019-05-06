@@ -15,6 +15,8 @@ import {AdminRtoComponent} from './admin-rto-page/admin-rto.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { FarenheihtPipe } from './farenheiht.pipe';
 import { MomentPipe } from './moment.pipe';
+import { AddUserModalComponent } from './add-user-modal/add-user-modal.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { MomentPipe } from './moment.pipe';
     EmployeeInfoComponent,
     AdminRtoComponent,
     FarenheihtPipe,
-    MomentPipe
+    MomentPipe,
+    AddUserModalComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { MomentPipe } from './moment.pipe';
     FormsModule,
     HttpClientModule,
     MatRadioModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
   ],
   exports: [MatRadioModule],
   providers: [],
