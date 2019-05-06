@@ -6,8 +6,8 @@ class insertProcessor {
     this.conn = mysql.createPool({
         host: "localhost",
         user: "root",
-        password: "root",
-        database: "dawgs_the_tee",
+        password: "Runescape3",
+        database: "dawgs_thee_tee",
         connectionLimit : 1000
       }
     );

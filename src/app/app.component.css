@@ -54,3 +54,9 @@ h1{
 
 }
 
+.weather table { border-collapse: collapse; }
+.weather tr { border: none; }
+.weather td {
+  border-right: solid 1px rgb(0, 0, 0);
+  border-left: solid 1px rgb(0, 0, 0);
+}

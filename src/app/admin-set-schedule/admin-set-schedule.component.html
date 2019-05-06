@@ -8,8 +8,12 @@
     <div style="width: 100%; padding: 20px; margin: 0;">
       <p *ngIf="weather.length == 0">Searching...</p>
       <div *ngIf="weather.length > 0">
+        <div class = "weather">
         <table style="width: 100%; text-align: center">
-          <thead></thead>
+          <thead>
+          <th colspan = "7"><h4 class="merriweather"><b>7 Day Forecast</b></h4></th>
+
+          </thead>
           <tbody>
           <tr>
             <td *ngFor="let forecast of weather">
@@ -21,6 +25,7 @@
           </tr>
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   </div>
