@@ -75,9 +75,6 @@ app.get('/employee-info', function(req, res, next) {
 
         joined.push(joinedItem);
       }
-      for (let k = 0; k < joined.length; k++) {
-        console.log(joined[k]);
-      }
       console.log('sending: ' + joined);
       var valsJSON = JSON.stringify(joined);
       res.json(joined);
@@ -156,6 +153,31 @@ app.post('/admin-rto/update',function(req, res, next){
     }
   });
 });
+
+app.post('/add-user',function(req, res, next){
+  queryInsert.createEmployeeCredentials(req.body.userName, req.body.userName, req.body.fName, req.body.lName, req.body.employeeType, req.body.email, req.body.gender,  function(err, results ) {
+    if (err) {
+     // res.json({msg: "err."});
+      next(err);
+      return;
+    }
+    else {
+      for(let i =0; i < req.body.roles.length; i++) {
+       queryInsert.rolesTrained(req.body.fName, req.body.lName, req.body.roles[i], function (err, resulz) {
+         if (err) {
+           next(err);
+           return;
+         }
+         else {
+
+         }
+       });
+      }
+    }
+  });
+});
+
+
 
 app.get('/admin-rto', function(req, res, next) {
   getProcessor.getListOfEmployeeRTO(function(err, results) {

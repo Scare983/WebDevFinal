@@ -29,7 +29,9 @@ const httpOptions = {
                   <th>UserName</th>
                   <th>Password</th>
                   <th>pref#shifts</th>
-                  <th><button type="button" class="btn btn-primary" (click)="newUser()">Add User </button></th>
+                  <nav>
+                  <th><a class="btn btn-primary" role="button" routerLink = "/add-user-modal" >Add User</a></th>
+                  </nav>
                 </tr>
               </thead>
               <tbody>
@@ -79,7 +81,7 @@ const httpOptions = {
 })
 
 export class EmployeeInfoComponent implements OnInit {
-  arrayOfEmployees = []//[ {fName:'Kevin0', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained: [0, 1, 2], gender:"M", userName:"Kev", password:"123" },{fName:'Kevin1', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained:[0, 1, 2], gender:"M", userName:"Kev", password:"123"} ];
+  arrayOfEmployees = [];//[ {fName:'Kevin0', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained: [0, 1, 2], gender:"M", userName:"Kev", password:"123" },{fName:'Kevin1', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained:[0, 1, 2], gender:"M", userName:"Kev", password:"123"} ];
    //=  {fName:, lName:, employeeType:, email:, roleTrained:, gender:, userName:, password:};
   array = [];
   private serverURL = 'http://localhost:3000/employee-info';
