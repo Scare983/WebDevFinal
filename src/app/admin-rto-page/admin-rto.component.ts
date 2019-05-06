@@ -1,12 +1,16 @@
 import {Component, OnInit} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 @Component({
   selector: 'app-employee-rto',
   template: `
     <div *ngIf="arrayOfEmployeesRTO.length > 0" class="right_bar">
-      <h2>List of Employees Who have <b>PENDING</b> Requested Times Off</h2>
+
       <div class="tab-content">
-      <table class="table table-bordered">
-        <thead>
+        <table class="table table-bordered table-editable table-striped ml-1 ">
+        <thead class ="thead-dark">
            <tr>
              <th>Name</th>
              <th>Requested Off Start Date</th>
@@ -42,13 +46,15 @@ import {Component, OnInit} from '@angular/core';
     <h1>No one is looking for a day off.</h1>
   </div>
   `,
-  styleUrls: ['../bootstrap.min.css','../app.component.css']
+  styleUrls: ['../bootstrap.min.css', '../app.component.css']
 })
 
 export class AdminRtoComponent implements  OnInit {
   private serverURL = 'http://localhost:3000/admin-rto';
     arrayOfEmployeesRTO = [];//methodThat gets array of employees
   array = [];
+  constructor(private http: HttpClient) {
+  }
   ngOnInit() {
     fetch(this.serverURL).then(response => {
       return response.json();
@@ -68,19 +74,30 @@ export class AdminRtoComponent implements  OnInit {
   }
 
   onClickMeAccept(i: number) {
-    if(confirm('Are you sure to Accept the request for:' + i)) {
-      console.log('Change the database');
+    if(confirm('Are you sure you want to Accept the request for: \n' + this.arrayOfEmployeesRTO[i].fName + " " + this.arrayOfEmployeesRTO[i].lName + " from \n" + this.arrayOfEmployeesRTO[i].reqOffStart + "\n to \n" + this.arrayOfEmployeesRTO[i].reqOffEnd)) {
+      this.arrayOfEmployeesRTO[i].response ="accepted";
+      let valsJSON = JSON.stringify(this.arrayOfEmployeesRTO[i]);
+      let goToLocation = 'http://localhost:3000/admin-rto/update';
+      this.http.post(goToLocation, valsJSON, httpOptions)
+        .subscribe(msg => console.log(msg));
+      window.location.reload();
     }
     else {
 
     }
   }
   onClickMeDeny(i: number) {
-    if(confirm('Are you sure to Deny the request for:' + i)) {
-      console.log('Change the database');
+    console.log(this.arrayOfEmployeesRTO[i]);
+    if(confirm('Are you sure you want to Deny the request for: \n' + this.arrayOfEmployeesRTO[i].fName + " " + this.arrayOfEmployeesRTO[i].lName + " from \n" + this.arrayOfEmployeesRTO[i].reqOffStart + "\n to \n" + this.arrayOfEmployeesRTO[i].reqOffEnd)) {
+      this.arrayOfEmployeesRTO[i].response ="denied";
+      let valsJSON = JSON.stringify(this.arrayOfEmployeesRTO[i]);
+
+      let goToLocation = 'http://localhost:3000/admin-rto/update';
+      this.http.post(goToLocation, valsJSON, httpOptions)
+        .subscribe(msg => console.log(msg));
+      window.location.reload();
     }
     else {
-
     }
   }
 }

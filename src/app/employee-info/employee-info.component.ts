@@ -19,7 +19,7 @@ const httpOptions = {
   template: `
     <div>
           <table class="table table-bordered table-editable table-striped ml-1">
-              <thead>
+              <thead class ="thead-dark">
                 <tr>
                   <th>Name</th>
                   <th>Employee Type</th>
@@ -118,6 +118,7 @@ export class EmployeeInfoComponent implements OnInit {
   }
   deleteUser(i) {
     if (confirm('Are you sure you want to delete ' + this.arrayOfEmployees[i].fName + ' ' +  this.arrayOfEmployees[i].lName + '?')) {
+
       let valsJSON = JSON.stringify(this.arrayOfEmployees[i]);
       let goToLocation = 'http://localhost:3000/employee-info/delete-emp-info';
       this.http.post(goToLocation, valsJSON, httpOptions)
