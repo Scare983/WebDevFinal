@@ -17,11 +17,9 @@ const httpOptions = {
 @Component({
   selector: 'app-employee-info-changes',
   template: `
-
     <div>
-   
           <table class="table table-bordered table-editable table-striped ml-1">
-              <thead>
+              <thead class ="thead-dark">
                 <tr>
                   <th>Name</th>
                   <th>Employee Type</th>
@@ -75,24 +73,7 @@ const httpOptions = {
                 </tr>
               </tbody>
             </table>
-
-    
-      
       </div>
-      
-
-
-
-  
-
-
-
-
-
-
-
-
-
   `,
   styleUrls: ['../bootstrap.min.css', '../app.component.css']
 })
@@ -121,16 +102,10 @@ export class EmployeeInfoComponent implements OnInit {
           for(var i = 0; i < this.array[0].length;i++ ) {
             this.arrayOfEmployees.push(this.array[0][i]);
           }
-
       });
-
    //console.log(this.arrayOfValues);
   }
-  submitCompany(form){
-    console.log(form.value);
-    alert("The form was submitted");
-    form.reset();
-  }
+
   saveToDataBase(i) {
     // this is going to be inefficient because i cant seem to get a comparison array from Ngint, so if save is clicked,  we are going to update entire DB row.
     let valsJSON = JSON.stringify(this.arrayOfEmployees[i]);
@@ -143,6 +118,7 @@ export class EmployeeInfoComponent implements OnInit {
   }
   deleteUser(i) {
     if (confirm('Are you sure you want to delete ' + this.arrayOfEmployees[i].fName + ' ' +  this.arrayOfEmployees[i].lName + '?')) {
+
       let valsJSON = JSON.stringify(this.arrayOfEmployees[i]);
       let goToLocation = 'http://localhost:3000/employee-info/delete-emp-info';
       this.http.post(goToLocation, valsJSON, httpOptions)
@@ -151,6 +127,6 @@ export class EmployeeInfoComponent implements OnInit {
     } else {
       return false;
     }
-
   }
+
 }

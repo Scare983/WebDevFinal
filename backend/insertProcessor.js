@@ -7,7 +7,7 @@ class insertProcessor {
         host: "localhost",
         user: "root",
         password: "root",
-        database: "dawgs@thetee",
+        database: "dawgs_the_tee",
         connectionLimit : 1000
       }
     );

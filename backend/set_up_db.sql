@@ -1,5 +1,13 @@
 create database if not exists dawgs_the_tee;
-
+CREATE TABLE `employee_init` (
+   `id` int(11) NOT NULL AUTO_INCREMENT,
+   `userName` varchar(100) NOT NULL,
+   `password` varchar(50) NOT NULL,
+   `fName` varchar(100) NOT NULL,
+   `lName` varchar(100) NOT NULL,
+   PRIMARY KEY (`id`),
+   KEY `idx_employee_init_id` (`id`)
+);
 CREATE TABLE `availability` 
 (  `id` int(11) NOT NULL,
   `can_work_day` tinyint(11) NOT NULL,
@@ -25,15 +33,7 @@ CREATE TABLE `employee` (
   );
   
   
-CREATE TABLE `employee_init` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userName` varchar(100) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `fName` varchar(100) NOT NULL,
-  `lName` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `idx_employee_init_id` (`id`)
-  );
+
   
 CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
@@ -1568,9 +1568,20 @@ insert into roles (id, roleTrained)
 
 
 
+insert into rto (id, reqOffStart, reqOffEnd, reason )
+values (30, '2000-06-18','2030-08-18','I deserve a break.' );
 
+insert into rto (id, reqOffStart, reqOffEnd )
+values (1, '2000-06-18','2030-08-18', );
 
+insert into rto (id, reqOffStart, reqOffEnd, reason )
+values (6, '2019-06-18','2019-08-18','I am tired.' );
 
+insert into rto (id, reqOffStart, reqOffEnd, reason )
+values (20, '2019-06-18','2020-08-18','Spring Break.' );
+
+insert into rto (id, reqOffStart, reqOffEnd, reason )
+values (25, '2018-10-18','2019-11-18', 'surgery');
 
 
 

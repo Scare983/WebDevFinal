@@ -138,6 +138,29 @@ app.post('/employee-info/delete-emp-info',function(req, res, next){
     }
   });
 });
+app.post('/admin-rto/update',function(req, res, next){
+ // console.log(req.body.response);
+
+  res.json({msg: req.body});
+  let date1 = new Date(req.body.reqOffStart.replace( /(\d{1,2})-(\d{1,2})-(\d{4})/, "$3/$1/$2"));
+  let date2 = new Date(req.body.reqOffEnd.replace( /(\d{1,2})-(\d{1,2})-(\d{4})/, "$3/$1/$2"));
+  let i1 = date1.getMonth() + 1;
+  date1 = date1.getFullYear() + "-" + i1  + "-" + date1.getDate();
+  let i2 = date2.getMonth() + 1;
+  date2 = date2.getFullYear() + "-" + i2  + "-" + date2.getDate();
+  console.log(req.body.reqOffStart);
+  console.log(req.body.reqOffEnd);
+  console.log(date1);
+  console.log(date2);
+  queryInsert.adminUpdatePendingRTO(req.body.fName, req.body.lName, date1, date2, req.body.response,  function(err, results ) {
+    if (err) {
+      console.log("hre");
+      next(err);
+      return;
+    }
+  });
+});
+
 app.get('/admin-rto', function(req, res, next) {
   getProcessor.getListOfEmployeeRTO(function(err, results) {
     if (err) {
@@ -153,11 +176,11 @@ app.get('/admin-rto', function(req, res, next) {
       }
       for (let k = 0; k < joined.length; k++) {
         let dateStart = new Date(joined[k].reqOffStart);
-        let dateFormat = dateStart.getMonth() + '-' + dateStart.getDate() + '-' + dateStart.getFullYear();
+        let dateFormat = dateStart.getMonth()+1 + '-' + dateStart.getDate() + '-' + dateStart.getFullYear();
         joined[k].reqOffStart = dateFormat;
 
         let dateEnd = new Date(joined[k].reqOffEnd);
-        let dateFormatEnd = dateEnd.getMonth() + '-' + dateEnd.getDate() + '-' + dateEnd.getFullYear();
+        let dateFormatEnd = dateEnd.getMonth()+1 + '-' + dateEnd.getDate() + '-' + dateEnd.getFullYear();
         joined[k].reqOffEnd = dateFormatEnd;
         console.log(joined[k]);
       }
