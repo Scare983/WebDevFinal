@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders} from "@angular/common/http";
 import { Router } from "@angular/router";
-import "rxjs/Rx";
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -32,7 +32,7 @@ export class AddUserModalComponent implements OnInit {
   ngOnInit() {
     
   }
-
+/*
   public register() {
     if(this.input.email && this.input.password) {
         let headers = new Headers({ "content-type": "application/json" });
@@ -43,6 +43,7 @@ export class AddUserModalComponent implements OnInit {
                 this.router.navigate(["/login"]);
             });
     }
+    */
 }
 
-}
+
