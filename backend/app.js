@@ -37,17 +37,13 @@ app.post('/admin-set-schedule',function(req, res, next){
 
   var htmlTableString;
   setTimeout(function(){
+
     scheduler.csvFileToHtmlString(scheduler.shopFileName,scheduler,function(err,data){
       console.log(data);
       res.json({data: data});
     });
-  },1000);
 
-  /*
-      fs.readFile(scheduler.shopFileName,'utf8',function(err,data){
-          res.render('/admin-view-schedule',
-      });
-  */
+  },1000);
 });
 
 

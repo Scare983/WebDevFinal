@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { ScheduleFormValues } from './ScheduleFormValues';
 import { SchedulerService } from '../scheduler.service';
+import { Scheduler } from '../../../backend/Scheduler.js';
 import * as jquery from '../jquery.js';
 import * as bootstrap from '../bootstrap.min.js';
 
@@ -77,7 +78,7 @@ export class AdminSetScheduleComponent implements OnInit {
 
   }
 
-  onSubmit(schedulerService: SchedulerService){
+ onSubmit(schedulerService: SchedulerService){
 
     var valsJSON = JSON.stringify(this.vals);
 
