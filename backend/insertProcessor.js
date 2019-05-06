@@ -48,7 +48,7 @@ class insertProcessor {
 //used for admin to insert a NEW employee.
 
 
-   createEmployeeCredentials(userName, password, fName, lName, employeeType, email, gender, prefNumShift = 5, prefWeekend = 0, callback) {
+   createEmployeeCredentials(userName, password, fName, lName, employeeType, email, gender, callback, prefNumShift = 5, prefWeekend = 0) {
     var sql = `INSERT INTO employee_init (userName, password, fName, lName) VALUES ('${userName}', '${password}', '${fName}', '${lName}')`;
     this.conn.getConnection(function(err, conn) {
       if (err)   callback(err, null);
@@ -265,7 +265,7 @@ class insertProcessor {
           //make sure this statement has default value 'pending' in reqAccpted.
           var sqlEmployeeUpdate = `INSERT INTO roles (id, roleTrained) VALUES ('${result[0].id}', '${added}')`;
           conn.query(sqlEmployeeUpdate, function (err, result) {
-            console.log("Updated " + lName + " reqOffAccepted to " + added);
+            console.log("Inserted " + lName + " roles to " + added);
             callback(err, result)
           });
         }
