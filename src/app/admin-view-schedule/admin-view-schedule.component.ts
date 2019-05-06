@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { SchedulerService } from '../scheduler.service'
 import * as jquery from '../jquery.js';
 import * as bootstrap from '../bootstrap.min.js';
 
@@ -20,7 +21,7 @@ export class AdminViewScheduleComponent implements OnInit {
   private serverURL = 'http://127.0.0.1:3000/';
   public weather: any;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private schedulerService: SchedulerService) {
     this.weather = [];
    }
 

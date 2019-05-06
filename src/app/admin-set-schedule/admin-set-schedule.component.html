@@ -57,7 +57,7 @@
 
     <div *ngIf="this.vals.dateStrings[0]">
 
-      <form (ngSubmit)="onSubmit()" #scheduleForm="ngForm">
+      <form (ngSubmit)="onSubmit(this.schedulerService)" #scheduleForm="ngForm">
 
         <table class="setScheduleTable">
           <tr>

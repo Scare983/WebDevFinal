@@ -5,6 +5,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { ScheduleFormValues } from './ScheduleFormValues';
+import { SchedulerService } from '../scheduler.service';
 import * as jquery from '../jquery.js';
 import * as bootstrap from '../bootstrap.min.js';
 
@@ -30,7 +31,7 @@ export class AdminSetScheduleComponent implements OnInit {
 
 
 
-  constructor(private http: HttpClient, private location: Location, private router: Router) { 
+  constructor(private http: HttpClient, private location: Location, private router: Router, private schedulerService: SchedulerService) {
   this.appID = 'M8eqbw9k0GtE64wKK8Pk';
     this.appCode = '07gzPxQWuIT7eF_wlfFAtw';
     this.weather = [];
@@ -43,7 +44,7 @@ export class AdminSetScheduleComponent implements OnInit {
     this.getWeather();
     this.vals = new ScheduleFormValues();
   }
- 
+
   public getWeather(){
 
     this.http.jsonp("https://weather.api.here.com/weather/1.0/report.json?app_id=M8eqbw9k0GtE64wKK8Pk&app_code=07gzPxQWuIT7eF_wlfFAtw&product=forecast_7days_simple&latitude=33.95&longitude=-83.37", "jsonpCallback")
@@ -76,20 +77,19 @@ export class AdminSetScheduleComponent implements OnInit {
 
   }
 
-  onSubmit(){
+  onSubmit(schedulerService: SchedulerService){
 
     var valsJSON = JSON.stringify(this.vals);
 
-    this.http.post<ScheduleFormValues>(this.serverURL, valsJSON, httpOptions)
-        .subscribe(msg => console.log(msg));
+    this.http.post<string>(this.serverURL, valsJSON, httpOptions)
+        .subscribe(function(msg){
+	  schedulerService.setHtmlTableString(msg);
+        });
 
     this.router.navigateByUrl('/admin-view-schedule');
 
     console.log("still here");
 
-    /*this.http.post<ScheduleFormValues>(this.serverURL, this.vals, httpOptions)
-        .subscribe(msg => console.log(msg));
-    */
   }
-  
+
 }
