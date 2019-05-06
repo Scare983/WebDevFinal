@@ -2,10 +2,10 @@
 
 <!-- The Modal (contains the Sign Up form) -->
 
-  <form class="modal-content" action="/action_page.php">
+  <form (ngSubmit)="onSubmit()" #scheduleForm="ngForm" class="modal-content">
     <div class="container">
       <h1>Sign Up</h1>
-      <p>Please fill in this form to add an empoyee.</p>
+      <p>Please fill in this form to add an employee.</p>
       <hr>
       <label for="fName"><b>First Name</b></label>
       <input type="text" placeholder="Enter First Name" name="fName" [(ngModel)]="input.fName" required>
@@ -16,25 +16,24 @@
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="fName" [(ngModel)]="input.email" required>
 
-      <label for="gender"><b>Gender: </b>
-        <input type="radio" name="gender" value="M"> Male
-        <input type="radio" name="gender" value="F"> Female
+      <label for="gender"><b>Gender:</b>
+        <input type="radio" [(ngModel)]="input.gender" name="gender" value="M"> Male
+        <input type="radio" [(ngModel)]="input.gender" name="gender" value="F"> Female
       </label><br><br>
 
       <label for="employeeType"><b>Employee Type: </b>
-        <input type="radio" name="employeeType" value="admin"> Admin  
-        <input type="radio" name="employeeType" value="manager"> Manager  
-        <input type="radio" name="employeeType" value="employee"> Employee  
+        <input type="radio" [(ngModel)]="input.employeeType" name="employeeType" value="admin"> Admin
+        <input type="radio" [(ngModel)]="input.employeeType" name="employeeType" value="manager"> Manager
+        <input type="radio" [(ngModel)]="input.employeeType" name="employeeType" value="employee"> Employee
     
       </label><br><br>
 
       <label for="employeeType"><b>Employee Type: </b></label>
-      <input [(ngModel)]="input.roles" name="role1" type="checkbox" value = "S"> Shop
-      <input [(ngModel)]="input.roles" name="role2" type="checkbox" value = "R"> Range
-      <input [(ngModel)]="input.roles" name="role3" type="checkbox" value = "C"> Carts
-      <input [(ngModel)]="input.roles" name="role4" type="checkbox" value = "RR"> RR
-      <input [(ngModel)]="input.roles" name="role5" type="checkbox" value = "ST"> Starter
-     
+      <input [(ngModel)]="input.roles[0]" name="role1" type="checkbox" value = "S"> Shop
+      <input [(ngModel)]="input.roles[1]" name="role2" type="checkbox" value = "R"> Range
+      <input [(ngModel)]="input.roles[2]" name="role3" type="checkbox" value = "C"> Carts
+      <input [(ngModel)]="input.roles[3]" name="role4" type="checkbox" value = "RR"> RR
+      <input [(ngModel)]="input.roles[4]" name="role5" type="checkbox" value = "ST"> Starter
       <br><br>
 
 
@@ -47,19 +46,15 @@
       <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="input.password" required>
 
       <label for="password-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="password-repeat" required>
+      <input type="password" [(ngModel)]="input.password_repeat" placeholder="Repeat Password" name="password_repeat" required>
 
 
  <div class="row">
     <div class = "col-2">
-          <nav>
-              <a class = "btn-btn block" routerLink = "/employee-info" role= "button" >Cancel</a>
-            </nav>
-            </div>
+      <button class="btn btn-primary" role= "button" routerLink = "/employee-info">cancel</button>
+    </div>
      <div class = "col-2">
-        <nav>
-          <a class = "btn-btn block" routerLink = "/employee-info" role= "button" (click)="register()">Register</a>
-        </nav>
+       <button class="btn btn-primary" (click)= "onSubmit()"  role= "button" type="submit">Register</button>
       </div>
       </div>
     </div>

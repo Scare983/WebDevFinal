@@ -100,7 +100,7 @@ const httpOptions = {
 })
 
 export class EmployeeInfoComponent implements OnInit {
-  arrayOfEmployees = []//[ {fName:'Kevin0', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained: [0, 1, 2], gender:"M", userName:"Kev", password:"123" },{fName:'Kevin1', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained:[0, 1, 2], gender:"M", userName:"Kev", password:"123"} ];
+  arrayOfEmployees = [];//[ {fName:'Kevin0', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained: [0, 1, 2], gender:"M", userName:"Kev", password:"123" },{fName:'Kevin1', lName: 'Linnane', employeeType: 'admin', email:'kevin@gmail.com', roleTrained:[0, 1, 2], gender:"M", userName:"Kev", password:"123"} ];
    //=  {fName:, lName:, employeeType:, email:, roleTrained:, gender:, userName:, password:};
   array = [];
   private serverURL = 'http://localhost:3000/employee-info';
@@ -128,11 +128,7 @@ export class EmployeeInfoComponent implements OnInit {
 
    //console.log(this.arrayOfValues);
   }
-  submitCompany(form){
-    console.log(form.value);
-    alert("The form was submitted");
-    form.reset();
-  }
+
   saveToDataBase(i) {
     // this is going to be inefficient because i cant seem to get a comparison array from Ngint, so if save is clicked,  we are going to update entire DB row.
     let valsJSON = JSON.stringify(this.arrayOfEmployees[i]);
