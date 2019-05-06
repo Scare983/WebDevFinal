@@ -17,9 +17,7 @@ const httpOptions = {
 @Component({
   selector: 'app-employee-info-changes',
   template: `
-
     <div>
-   
           <table class="table table-bordered table-editable table-striped ml-1">
               <thead>
                 <tr>
@@ -75,24 +73,7 @@ const httpOptions = {
                 </tr>
               </tbody>
             </table>
-
-    
-      
       </div>
-      
-
-
-
-  
-
-
-
-
-
-
-
-
-
   `,
   styleUrls: ['../bootstrap.min.css', '../app.component.css']
 })
@@ -121,16 +102,10 @@ export class EmployeeInfoComponent implements OnInit {
           for(var i = 0; i < this.array[0].length;i++ ) {
             this.arrayOfEmployees.push(this.array[0][i]);
           }
-
       });
-
    //console.log(this.arrayOfValues);
   }
-  submitCompany(form){
-    console.log(form.value);
-    alert("The form was submitted");
-    form.reset();
-  }
+
   saveToDataBase(i) {
     // this is going to be inefficient because i cant seem to get a comparison array from Ngint, so if save is clicked,  we are going to update entire DB row.
     let valsJSON = JSON.stringify(this.arrayOfEmployees[i]);
@@ -151,6 +126,6 @@ export class EmployeeInfoComponent implements OnInit {
     } else {
       return false;
     }
-
   }
+
 }
