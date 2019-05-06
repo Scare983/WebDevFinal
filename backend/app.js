@@ -35,6 +35,14 @@ app.post('/admin-set-schedule',function(req, res, next){
       scheduler.scheduleDays[i],req.body.starterPMtimes[i],'18:00','ST',scheduler);
   }
 
+  var htmlTableString;
+  setTimeout(function(){
+    scheduler.csvFileToHtmlString(scheduler.shopFileName,scheduler,function(err,data){
+      console.log(data);
+      res.json({data: data});
+    });
+  },1000);
+
   /*
       fs.readFile(scheduler.shopFileName,'utf8',function(err,data){
           res.render('/admin-view-schedule',

@@ -109,6 +109,38 @@ class Scheduler{
 		});
 	}
 
+	csvFileToHtmlString(csvFile,self,callback){
+		self.fs.readFile(self.shopFileName,'utf8',function(err,csvString){
+			var htmlTableString = '<table>';
+			var tempArr = [];
+			var line = '';
+			var pos1 = 0;
+			var pos2 = csvString.indexOf('\n',pos1);
+
+			while(pos2 != -1){
+				line = csvString.substring(pos1, pos2);
+
+				tempArr = line.split(',');
+				htmlTableString = htmlTableString.concat('<tr>');
+				for(var i=0;i<tempArr.length;i++){
+					htmlTableString = htmlTableString.concat('<td>')
+													.concat(tempArr[i])
+													.concat('</td>');
+				}
+
+				htmlTableString = htmlTableString.concat('</tr>');
+
+				pos1 = pos2 + 1;
+				pos2 = csvString.indexOf('\n',pos1);
+
+			}
+
+			htmlTableString = htmlTableString.concat('</table>');
+
+			callback(err,htmlTableString);
+		});
+	}
+
 
 
 }
