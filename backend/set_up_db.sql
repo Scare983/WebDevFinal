@@ -1,75 +1,83 @@
 create database if not exists dawgs_the_tee;
-CREATE TABLE `employee_init` (
-   `id` int(11) NOT NULL AUTO_INCREMENT,
-   `userName` varchar(100) NOT NULL,
-   `password` varchar(50) NOT NULL,
-   `fName` varchar(100) NOT NULL,
-   `lName` varchar(100) NOT NULL,
-   PRIMARY KEY (`id`),
-   KEY `idx_employee_init_id` (`id`)
+
+use dawgs_the_tee;
+
+DROP TABLE IF EXISTS availability;
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS rto;
+DROP TABLE IF EXISTS schedule;
+DROP TABLE IF EXISTS employee_init;
+
+CREATE TABLE IF NOT EXISTS employee_init
+(
+   id int(11) NOT NULL AUTO_INCREMENT,
+   userName varchar(100) NOT NULL,
+   password varchar(50) NOT NULL,
+   fName varchar(100) NOT NULL,
+   lName varchar(100) NOT NULL,
+   PRIMARY KEY (id),
+   KEY idx_employee_init_id (id)
 );
-CREATE TABLE `availability` 
-(  `id` int(11) NOT NULL,
-  `can_work_day` tinyint(11) NOT NULL,
-  `start_work_hour` time NOT NULL,
-  `end_work_hour` time NOT NULL,
-  `availabilityID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`availabilityID`),
-  KEY `id_idx` (`id`),
-  KEY `id_idc` (`id`),
-  CONSTRAINT `idz` FOREIGN KEY (`id`) REFERENCES `employee_init` (`id`) ON DELETE CASCADE
-  );
-  
 
-CREATE TABLE `employee` (
-  `id` int(11) NOT NULL,
-  `employeeType` enum('manager','admin','employee') NOT NULL,
-  `email` varchar(89) NOT NULL,
-  `gender` enum('M','F') NOT NULL,
-  `prefNumOfShifts` int(11) DEFAULT '5',
-  `prefWeekends` tinyint(4) DEFAULT '0',
-  KEY `id_idx` (`id`),
-  CONSTRAINT `id` FOREIGN KEY (`id`) REFERENCES `employee_init` (`id`) ON DELETE CASCADE
-  );
-  
-  
-
-  
-CREATE TABLE `roles` (
-  `id` int(11) NOT NULL,
-  `roleTrained` enum('ST','C','R','RR','T','S') NOT NULL,
-  KEY `id_idx` (`id`),
-  CONSTRAINT `WHY` FOREIGN KEY (`id`) REFERENCES `employee_init` (`id`) ON DELETE CASCADE
+CREATE TABLE IF NOT EXISTS availability
+(
+  id int(11) NOT NULL,
+  can_work_day tinyint(11) NOT NULL,
+  start_work_hour time NOT NULL,
+  end_work_hour time NOT NULL,
+  availabilityID int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (availabilityID),
+  KEY id_idx (id),
+  KEY id_idc (id),
+  CONSTRAINT idz FOREIGN KEY (id) REFERENCES employee_init (id) ON DELETE CASCADE
   );
 
-CREATE TABLE `rto` (
-  `id` int(11) NOT NULL,
-  `reqOffStart` date NOT NULL,
-  `reqOffEnd` date NOT NULL,
-  `reqStatus` enum('accepted','denied','pending') NOT NULL DEFAULT 'pending',
-  `reason` varchar(200) DEFAULT NULL,
-  `reqNumber` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`reqNumber`),
-  KEY `id_idx` (`id`),
-  CONSTRAINT `idDe` FOREIGN KEY (`id`) REFERENCES `employee_init` (`id`) ON DELETE CASCADE
+CREATE TABLE IF NOT EXISTS employee (
+  id int(11) NOT NULL,
+  employeeType enum('manager','admin','employee') NOT NULL,
+  email varchar(89) NOT NULL,
+  gender enum('M','F') NOT NULL,
+  prefNumOfShifts int(11) DEFAULT '5',
+  prefWeekends tinyint(4) DEFAULT '0',
+  KEY id_idx (id),
+  CONSTRAINT id FOREIGN KEY (id) REFERENCES employee_init (id) ON DELETE CASCADE
   );
-  
-  
-CREATE TABLE `schedule` (
-  `id` int(11) NOT NULL,
-  `work_date` date NOT NULL,
-  `start_work_hour` time NOT NULL,
-  `end_work_hour` time NOT NULL,
-  `role` enum('ST','C','R','RR','T','S') NOT NULL,
-  KEY `id_idx` (`id`),
-  CONSTRAINT `IDkey` FOREIGN KEY (`id`) REFERENCES `employee_init` (`id`) ON DELETE CASCADE
+
+CREATE TABLE IF NOT EXISTS roles (
+  id int(11) NOT NULL,
+  roleTrained enum('ST','C','R','RR','T','S') NOT NULL,
+  KEY id_idx (id),
+  CONSTRAINT WHY FOREIGN KEY (id) REFERENCES employee_init (id) ON DELETE CASCADE
+  );
+
+CREATE TABLE IF NOT EXISTS rto (
+  id int(11) NOT NULL,
+  reqOffStart date NOT NULL,
+  reqOffEnd date NOT NULL,
+  reqStatus enum('accepted','denied','pending') NOT NULL DEFAULT 'pending',
+  reason varchar(200) DEFAULT NULL,
+  reqNumber int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (reqNumber),
+  KEY id_idx (id),
+  CONSTRAINT idDe FOREIGN KEY (id) REFERENCES employee_init (id) ON DELETE CASCADE
+  );
+
+CREATE TABLE IF NOT EXISTS schedule (
+  id int(11) NOT NULL,
+  work_date date NOT NULL,
+  start_work_hour time NOT NULL,
+  end_work_hour time NOT NULL,
+  role enum('ST','C','R','RR','T','S') NOT NULL,
+  KEY id_idx (id),
+  CONSTRAINT IDkey FOREIGN KEY (id) REFERENCES employee_init (id) ON DELETE CASCADE
   );
 
 
 /******************************** CREATE USER INFO *****************/
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA1', 123567, 'matt', 'peterson');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA2', 123567, 'john', 'crumbley');
 
@@ -78,115 +86,115 @@ insert into employee_init(userName, password, fName, lName)
 
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA4', 123567, 'jackson', 'jones');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA5', 123567, 'griffin', 'rousseau');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA6', 123567, 'evan', 'verma');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA7', 123567, 'parker', 'brooks');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA8', 123567, 'robby', 'wells');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA9', 123567, 'zach', 'bibbs');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA10', 123567, 'brooke', 'unknown');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA11', 123567, 'carly', 'anderson');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA12', 123567, 'don', 'niepoth');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA13', 123567, 'jeff', 'unknown');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA14', 123567, 'jack', 'unknown');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA15', 123567, 'ron', 'unknown');
 
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA16', 123567, 'mike', 'c');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA17', 123567, 'ernest', 'unknown');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA18', 123567, 'steve', 'unknown');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA19', 123567, 'clint', 'udell');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA20', 123567, 'mike', 'lockwood');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA21', 123567, 'patrick', 'unknown');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA22', 123567, 'Nathan', 'a');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA23', 123567, 'jake', 'lee');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA24', 123567, 'ethan', 'finney');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA25', 123567, 'avery', 'unknown');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA26', 123567, 'alex', 'weltz');
-	
+
 insert into employee_init(userName, password, fName, lName)
-	values ('changemeUGA27', 123567, 'cammie', 'unknown');	
-	
+	values ('changemeUGA27', 123567, 'cammie', 'unknown');
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA28', 123567, 'asa', 'unknown');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA29', 123567, 'charles', 'canada');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA30', 123567, 'colton', 'unknown');
 
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA31', 123567, 'tanner', 'unknown');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA32', 123567, 'riggs', 'unknown');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA33', 123567, 'andrew', 'stine');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA34', 123567, 'nevada', 'unknown');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA35', 123567, 'cannon', 'unknown');
 
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA36', 123567, 'andrew', 'taylor');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA37', 123567, 'noah', 'unknown');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA38', 123567, 'juliana', 'unknown');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA39', 123567, 'joe', 'reichard');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA40', 123567, 'rusty', 'unknown');
-	
+
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA41', 123567, 'bob', 'unknown');
 
@@ -195,7 +203,7 @@ insert into employee_init(userName, password, fName, lName)
 
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA43', 123567, 'jake', 'edison');
-	
+
 /********* INSERT INTO EMPLOYEE TABLE ***************/
 
 insert into employee (id, employeeType, email, gender)
@@ -326,10 +334,10 @@ insert into employee (id, employeeType, email, gender)
 
 insert into employee (id, employeeType, email, gender)
 	values (40, 'employee','Rusty','M');
-	
 
-	
-	
+
+
+
 
 /******************************** INSERT INTO AVAILABILITY TABLES *****************/
 
@@ -1572,7 +1580,7 @@ insert into rto (id, reqOffStart, reqOffEnd, reason )
 values (30, '2000-06-18','2030-08-18','I deserve a break.' );
 
 insert into rto (id, reqOffStart, reqOffEnd )
-values (1, '2000-06-18','2030-08-18', );
+values (1, '2000-06-18','2030-08-18');
 
 insert into rto (id, reqOffStart, reqOffEnd, reason )
 values (6, '2019-06-18','2019-08-18','I am tired.' );
